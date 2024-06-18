@@ -12,10 +12,10 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Dabniel Vitor Salviano Araújo 
+* Daniel Vitor Salviano Araújo 
 * Gustavo Augusto Santos Perdigão
 * Pedro Antônio Silva Neto
-* Vinicius Augusto Gomes de Oliveira
+* Vinícius Augusto Gomes de Oliveira
 * Yago de Arruda Simões
 
 ## Orientador
