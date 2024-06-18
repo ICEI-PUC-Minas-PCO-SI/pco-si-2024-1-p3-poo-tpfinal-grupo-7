@@ -70,9 +70,48 @@ namespace Classes
         }
     }
 
-    public abstract class eleicao
+    public abstract class Eleicao
     {
         private int totalDeVotos;
 
+        //PartidoJudiciario [] partidos = new PartidoJudiciario[0];
     }
+
+        public class Executivo : Eleicao{
+
+        Candidato []candidato = new Candidato[0]; //fazer a função ainda
+
+        private int turno {get; set;} 
+
+           public int getTurno()
+        {
+            return this.turno;
+        }
+
+         public int setTurno(int _turno)
+        {
+             this.turno = _turno;
+        }
+    public override int TotalVotos(int votos){
+
+return votos;
+    }
+
+    public  int primeiroturno(int votos){
+
+return votos;
+    }
+
+     public  int segundoturno(int votos){
+
+return votos;
+    }
+
+    public  int desempate(int votos){
+
+return votos;
+    }
+}
+
+    
 }
