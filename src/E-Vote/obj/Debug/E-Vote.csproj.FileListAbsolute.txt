@@ -1,0 +1,5 @@
+C:\Users\1442500\Source\Repos\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.AssemblyReference.cache
+C:\Users\1442500\Source\Repos\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Login.resources
+C:\Users\1442500\Source\Repos\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Properties.Resources.resources
+C:\Users\1442500\Source\Repos\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.GenerateResource.cache
+C:\Users\1442500\Source\Repos\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.CoreCompileInputs.cache

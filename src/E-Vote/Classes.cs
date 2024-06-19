@@ -79,7 +79,7 @@ namespace Classes
 
         public class Executivo : Eleicao{
 
-        Candidato []candidato = new Candidato[0]; //fazer a função ainda
+        //Candidato []candidato = new Candidato[0]; //fazer a função ainda
 
         private int turno {get; set;} 
 
@@ -88,11 +88,11 @@ namespace Classes
             return this.turno;
         }
 
-         public int setTurno(int _turno)
+         public void setTurno(int _turno)
         {
              this.turno = _turno;
         }
-    public override int TotalVotos(int votos){
+    public int TotalVotos(int votos){
 
 return votos;
     }
