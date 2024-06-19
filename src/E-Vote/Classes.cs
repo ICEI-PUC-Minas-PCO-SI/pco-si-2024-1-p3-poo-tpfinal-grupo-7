@@ -70,11 +70,110 @@ namespace Classes
         }
     }
 
+    public class Usuario:Conta{ // ver com o pedro depois
+
+       int cpf;
+
+       string nome;
+
+       string senha;
+
+       bool adm = false;
+
+       public int getCpf(){ 
+        return this.cpf;
+       }
+
+       public void setCpf(int _cpf){
+         this.cpf = _cpf;
+       }
+
+        public string getNome(){
+        return this.nome;
+       }
+
+       public void setNome(string _nome){
+         this.nome = _nome;
+       }
+
+        public string getSenha(){
+        return this.senha;
+       }
+
+       public void setSenha(string _senha){
+         this.senha = _senha;
+       }
+
+    
+
+       public Usuario(int cpf_, string senha_, string nome_)
+        {
+            cpf=cpf_;
+            senha=senha_;
+            nome=nome_;
+        }
+
+
+
+    }
+
+    public class Administrador:Conta{
+
+       int cpf;
+
+       string nome;
+
+       string senha;
+
+       bool adm = true;
+
+       
+       public int getCpf(){ 
+        return this.cpf;
+       }
+
+       public void setCpf(int _cpf){
+         this.cpf = _cpf;
+       }
+
+        public string getNome(){
+        return this.nome;
+       }
+
+       public void setNome(string _nome){
+         this.nome = _nome;
+       }
+
+        public string getSenha(){
+        return this.senha;
+       }
+
+       public void setSenha(string _senha){
+         this.senha = _senha;
+       }
+    
+
+       public Administrador(int cpf_)
+        {
+            cpf=cpf_;
+            senha=senha_;
+            nome=nome_;
+           
+        }
+
+        public void criarPartido(){
+
+
+        }
+
+
+    }
+
     public abstract class Eleicao
     {
-        private int totalDeVotos;
+        abstract private int totalDeVotos;
 
-        //PartidoJudiciario [] partidos = new PartidoJudiciario[0];
+        
     }
 
         public class Executivo : Eleicao{
@@ -83,15 +182,7 @@ namespace Classes
 
         private int turno {get; set;} 
 
-           public int getTurno()
-        {
-            return this.turno;
-        }
-
-         public void setTurno(int _turno)
-        {
-             this.turno = _turno;
-        }
+          
     public int TotalVotos(int votos){
 
 return votos;
