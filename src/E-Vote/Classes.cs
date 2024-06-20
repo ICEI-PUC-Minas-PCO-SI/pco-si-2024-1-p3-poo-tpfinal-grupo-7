@@ -235,6 +235,7 @@ public class Executivo : Eleicao
                 empate = true;
             }
         }
+        //Define os votos do candidato como maxVotos, se tiver outro candidato com a mesma quantidade de votos(maxVotos) define empate como true, vai pro empate e chama o segundo turno
         
          if (empate)
             {
@@ -276,7 +277,7 @@ public void RegistrarCandidato(Candidato candidato, int index) //mudar isso aq
 
     Console.WriteLine($"Coloque os votos referentes ao {candidato2.Nome}!");
     int votosCandidato2 = int.Parse(Console.ReadLine());
-  
+  //Define os candidatos com mais votos pelo "OrderByDescending" e declara eles em variáveis, depois define a quantidade de votos pros 2 e verifica se alguém ganhou a eleição ou se vai pro desempate
 
       candidato1.Votos = votosCandidato1;
     candidato2.Votos = votosCandidato2;
@@ -299,7 +300,7 @@ desempate(candidato1, candidato2);
  public void desempate(Candidato candidato1, Candidato candidato2)
     {
 
-
+//No desempate verifica qual é mais velho e define como vencedor
 if (candidato1.Idade > candidato2.Idade)
             {
               Console.WriteLine($"{candidato1.Nome} ganhou a eleição!");
