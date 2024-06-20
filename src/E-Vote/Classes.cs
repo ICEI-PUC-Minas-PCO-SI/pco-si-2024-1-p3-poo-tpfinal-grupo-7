@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Interfaces;
+
 
 namespace Classes
 {
@@ -70,7 +70,7 @@ namespace Classes
         }
     }
 
-    public class Usuario:Conta{ // ver com o pedro depois
+    public class Usuario{ // Mudar pras do pedro depois q ele commitar
 
        int cpf;
 
@@ -117,7 +117,7 @@ namespace Classes
 
     }
 
-    public class Administrador:Conta{
+    public class Administrador{ //Mudar pras do pedro depois q ele commitar
 
        int cpf;
 
@@ -153,7 +153,7 @@ namespace Classes
        }
     
 
-       public Administrador(int cpf_)
+       public Administrador(int cpf_, string senha_, string nome_)
         {
             cpf=cpf_;
             senha=senha_;
@@ -169,40 +169,146 @@ namespace Classes
 
     }
 
-    public abstract class Eleicao
+   public abstract class Eleicao
+{
+     protected int totalDeVotos = 0;
+
+        public int getTotalDeVotos()
+        {
+            return totalDeVotos;
+        }
+
+        public void adicionarVotos(int votos)
+        {
+            totalDeVotos += votos;
+        }
+
+}
+
+ public class Candidato //Mudar pras do pedro depois q ele commitar
     {
-        abstract private int totalDeVotos;
+        public string Nome { get; set; }
+        public int Codigo { get; set; }
+        public int Votos { get; set; }
+        public int Idade { get; set; }
+        public Partido Partido { get; set; }
+
+        public Candidato(string nome, int codigo, Partido partido, int idade, int votos)
+        {
+            Nome = nome;
+            Codigo = codigo;
+            Votos = votos;
+            Partido = partido;
+            Idade = idade;
+        }
+    }
+
+public class Executivo : Eleicao
+{
+    private Candidato[] candidatos;
+
+    private int turno;
+    public Executivo(int numeroCandidatos)
+    {
+        candidatos = new Candidato[numeroCandidatos];
+        turno = 1;
+    }
+
+
+    public void PrimeiroTurno()
+    {
+        bool empate = false;
+           int maxVotos = -1;
+        Candidato vencedor = null;
+
+        turno = 1;
+
+        for (int i = 0; i < candidatos.Length; i++)
+        {
+            if (candidatos[i].Votos > maxVotos)
+            {
+                maxVotos = candidatos[i].Votos;
+                vencedor = candidatos[i];
+            }
+            else if (candidatos[i].Votos == maxVotos)
+            {
+                empate = true;
+            }
+        }
+        
+         if (empate)
+            {
+                
+                segundoturno();
+            }
+            else if (vencedor != null)
+            {
+                Console.WriteLine($"Vencedor do primeiro turno: {vencedor.Nome}");
+            }
 
         
     }
 
-        public class Executivo : Eleicao{
+public void RegistrarCandidato(Candidato candidato, int index) //mudar isso aq
+        {
+            candidatos[index] = candidato;
+        }
+    
 
-        //Candidato []candidato = new Candidato[0]; //fazer a função ainda
+    public void segundoturno()
+    {
+       
+       turno = 2;
 
-        private int turno {get; set;} 
+ var topTwo = candidatos.Where(c => c != null).OrderByDescending(c => c.Votos).Take(2).ToArray();
+   
 
-          
-    public int TotalVotos(int votos){
+    Candidato candidato1 = topTwo[0];
+    Candidato candidato2 = topTwo[1];
 
-return votos;
+    turno = 2;
+
+    Console.WriteLine("A votação deu empate, iremos para o segundo turno!");
+
+    Console.WriteLine($"Coloque os votos referentes ao {candidato1.Nome}!");
+    int votosCandidato1 = int.Parse(Console.ReadLine());
+   
+
+    Console.WriteLine($"Coloque os votos referentes ao {candidato2.Nome}!");
+    int votosCandidato2 = int.Parse(Console.ReadLine());
+  
+
+      candidato1.Votos = votosCandidato1;
+    candidato2.Votos = votosCandidato2;
+
+    if (candidato1.Votos > candidato2.Votos)
+    {
+        Console.WriteLine($"{candidato1.Nome} ganhou a eleição!");
     }
-
-    public  int primeiroturno(int votos){
-
-return votos;
+    else if (candidato2.Votos > candidato1.Votos)
+    {
+        Console.WriteLine($"{candidato2.Nome} ganhou a eleição!");
     }
-
-     public  int segundoturno(int votos){
-
-return votos;
+    else 
+    {
+       Console.WriteLine("Vamos para o desempate!");
+desempate(candidato1, candidato2);
     }
-
-    public  int desempate(int votos){
-
-return votos;
+    
     }
-}
+ public void desempate(Candidato candidato1, Candidato candidato2)
+    {
 
+
+if (candidato1.Idade > candidato2.Idade)
+            {
+              Console.WriteLine($"{candidato1.Nome} ganhou a eleição!");
+               
+            } else {
+
+Console.WriteLine($"{candidato2.Nome} ganhou a eleição!");
+
+    }
     
 }
+}}
