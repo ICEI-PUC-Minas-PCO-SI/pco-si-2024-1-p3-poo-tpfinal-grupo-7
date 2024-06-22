@@ -69,6 +69,17 @@ namespace Classes
             return this.quocienteEleitoral;
         }
     }
+    public abstract class Pessoa
+    {
+        public string Nome { get; set; }
+    }
+    public abstract class Conta : Pessoa
+    {
+        public string Senha { get; set; }
+        public bool Adm { get; set; }
+    }
+
+
 
     public class Usuario
     { // Mudar pras do pedro depois q ele commitar
