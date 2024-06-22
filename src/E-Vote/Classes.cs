@@ -77,6 +77,12 @@ namespace Classes
     {
         public string Senha { get; set; }
         public bool Adm { get; set; }
+
+         public Conta(string nome, string senha, bool adm) : base(nome)
+        {
+            Senha = senha;
+            Adm = adm;
+        }
     }
 
 
