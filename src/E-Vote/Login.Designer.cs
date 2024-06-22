@@ -37,22 +37,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(324, 158);
+            this.label1.Location = new System.Drawing.Point(352, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 39);
+            this.label1.Size = new System.Drawing.Size(129, 41);
             this.label1.TabIndex = 9;
             this.label1.Text = "E-VOTE";
             // 
             // e_vote
             // 
             this.e_vote.AutoSize = true;
-            this.e_vote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.e_vote.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.e_vote.ForeColor = System.Drawing.SystemColors.Control;
-            this.e_vote.Location = new System.Drawing.Point(326, 133);
+            this.e_vote.Location = new System.Drawing.Point(371, 120);
             this.e_vote.Name = "e_vote";
-            this.e_vote.Size = new System.Drawing.Size(144, 25);
+            this.e_vote.Size = new System.Drawing.Size(103, 21);
             this.e_vote.TabIndex = 8;
             this.e_vote.Text = "Bem-vindo ao";
             // 
@@ -60,7 +60,7 @@
             // 
             this.buttonLogin.BackColor = System.Drawing.Color.LightGreen;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(365, 288);
+            this.buttonLogin.Location = new System.Drawing.Point(375, 332);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 30);
             this.buttonLogin.TabIndex = 7;
@@ -72,7 +72,7 @@
             // 
             this.name.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(330, 237);
+            this.name.Location = new System.Drawing.Point(341, 257);
             this.name.MaxLength = 11;
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(140, 26);
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(853, 612);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.e_vote);
             this.Controls.Add(this.buttonLogin);

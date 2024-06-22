@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\",
+  "WorkspaceRootPath": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\telauser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:telauser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|C:\\Users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\interfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\interfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:interfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,40 +38,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Home.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\1442500\\Source\\Repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Home.cs",
-              "RelativeDocumentMoniker": "Home.cs",
-              "ToolTip": "C:\\Users\\1442500\\Source\\Repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Home.cs [Design]",
-              "RelativeToolTip": "Home.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "telaUser.cs [Design]",
+              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\telaUser.cs",
+              "RelativeDocumentMoniker": "telaUser.cs",
+              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\telaUser.cs [Design]",
+              "RelativeToolTip": "telaUser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T23:24:29.569Z",
+              "WhenOpened": "2024-06-22T19:11:25.482Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.Designer.cs",
+              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.Designer.cs",
+              "RelativeDocumentMoniker": "Login.Designer.cs",
+              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.Designer.cs",
+              "RelativeToolTip": "Login.Designer.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAWwDgAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T18:09:24.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Admin.cs [Design]",
+              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin.cs",
+              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs [Design]",
+              "RelativeToolTip": "Admin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T17:55:59.731Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\1442500\\Source\\Repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
+              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
               "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "C:\\Users\\1442500\\Source\\Repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs*",
-              "RelativeToolTip": "Login.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
+              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T22:36:12.19Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Interfaces.cs",
-              "DocumentMoniker": "C:\\Users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Interfaces.cs",
+              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Interfaces.cs",
               "RelativeDocumentMoniker": "Interfaces.cs",
-              "ToolTip": "C:\\Users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Interfaces.cs",
+              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Interfaces.cs",
               "RelativeToolTip": "Interfaces.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -72,13 +105,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Classes.cs",
-              "DocumentMoniker": "C:\\Users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Classes.cs",
+              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Classes.cs",
               "RelativeDocumentMoniker": "Classes.cs",
-              "ToolTip": "C:\\Users\\1442500\\source\\repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Classes.cs",
+              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Classes.cs",
               "RelativeToolTip": "Classes.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAA0wFAAAAAAAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAIwFAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-17T00:41:53.797Z",
               "EditorCaption": ""
@@ -87,10 +120,10 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\1442500\\Source\\Repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
+              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
               "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "C:\\Users\\1442500\\Source\\Repos\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs [Design]*",
-              "RelativeToolTip": "Login.cs [Design]*",
+              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs [Design]",
+              "RelativeToolTip": "Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-17T00:33:13.193Z",
               "EditorCaption": " [Design]"
