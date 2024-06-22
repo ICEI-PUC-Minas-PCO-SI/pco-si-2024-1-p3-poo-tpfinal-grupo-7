@@ -11,16 +11,16 @@
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\interfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Admin.cs [Design]",
               "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
               "RelativeDocumentMoniker": "Admin.cs",
@@ -105,20 +105,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Classes.cs",
               "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Classes.cs",
               "RelativeDocumentMoniker": "Classes.cs",
               "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Classes.cs",
               "RelativeToolTip": "Classes.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAIwFAAAAAAAAAA",
+              "ViewState": "AQIAAEwBAAAAAAAAAIA8wGQBAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-17T00:41:53.797Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
               "RelativeDocumentMoniker": "Login.cs",
