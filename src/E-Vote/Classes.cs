@@ -54,7 +54,7 @@ namespace Classes
             this.cadeiras = (int)(votosRecebidos / quocienteEleitoral);
         }
 
-        public int getCadeiras()
+        public int getCadeiras()    
         {
             return this.cadeiras;
         }
