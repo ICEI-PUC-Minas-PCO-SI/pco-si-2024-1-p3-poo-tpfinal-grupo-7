@@ -10,3 +10,4 @@ D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Properti
 D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.telaUser.resources
 D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.GenerateResource.cache
 D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.CoreCompileInputs.cache
+c:\Users\pedro neto\Documents\trabalho POO\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.AssemblyReference.cache

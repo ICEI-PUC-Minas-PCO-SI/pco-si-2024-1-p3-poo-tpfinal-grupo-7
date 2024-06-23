@@ -1,28 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
-
-namespace Classes
+namespace Eleicoes
 {
     public class Partido
     {
         private string nome;
         private int votosRecebidos;
-
-        public int Codigo;
-
-        public int getCodigo()
-        {
-            return this.Codigo;
-        }
-
-        public void setCodigo(int _codigo)
-        {
-            this.Codigo = _codigo;
-        }
 
         public Partido(string _nome)
         {
@@ -81,13 +68,12 @@ namespace Classes
             return this.quocienteEleitoral;
         }
     }
-  
-    public abstract class Conta 
+
+    public abstract class Conta
     {
         public int cpf;
-   
 
-        public Conta(int cpf_) 
+        public Conta(int cpf_)
         {
             cpf = cpf_;
         }
@@ -98,8 +84,8 @@ namespace Classes
 
     }
 
-    public class Usuario: Conta
-    { 
+    public class Usuario : Conta
+    {
 
         public int cpf;
 
@@ -113,15 +99,15 @@ namespace Classes
             this.cpf = _cpf;
         }
 
-        public Usuario(int cpf_):base(cpf_)
+        public Usuario(int cpf_) : base(cpf_)
         {
 
         }
 
     }
 
-    public class Administrador:Conta
-    { 
+    public class Administrador : Conta
+    {
 
         public int cpf;
 
@@ -178,14 +164,13 @@ namespace Classes
     public class Executivo : Eleicao
     {
         private Candidato[] candidatos;
-
         private int turno;
+
         public Executivo(int numeroCandidatos)
         {
             candidatos = new Candidato[numeroCandidatos];
             turno = 1;
         }
-
 
         public void PrimeiroTurno()
         {
@@ -201,55 +186,45 @@ namespace Classes
                 {
                     maxVotos = candidatos[i].Votos;
                     vencedor = candidatos[i];
+                    empate = false;
                 }
                 else if (candidatos[i].Votos == maxVotos)
                 {
                     empate = true;
                 }
             }
-            //Define os votos do candidato como maxVotos, se tiver outro candidato com a mesma quantidade de votos(maxVotos) define empate como true, vai pro empate e chama o segundo turno
 
             if (empate)
             {
-
-                segundoturno();
+                SegundoTurno();
             }
             else if (vencedor != null)
             {
                 Console.WriteLine($"Vencedor do primeiro turno: {vencedor.Nome}");
             }
-
-
         }
 
-        public void RegistrarCandidato(Candidato candidato, int index) //mudar isso aq
+        public void RegistrarCandidato(Candidato candidato, int index)
         {
             candidatos[index] = candidato;
         }
 
-
-        public void segundoturno()
+        public void SegundoTurno()
         {
-
             turno = 2;
 
             var topTwo = candidatos.Where(c => c != null).OrderByDescending(c => c.Votos).Take(2).ToArray();
 
-
             Candidato candidato1 = topTwo[0];
             Candidato candidato2 = topTwo[1];
-
-            turno = 2;
 
             Console.WriteLine("A votação deu empate, iremos para o segundo turno!");
 
             Console.WriteLine($"Coloque os votos referentes ao {candidato1.Nome}!");
             int votosCandidato1 = int.Parse(Console.ReadLine());
 
-
             Console.WriteLine($"Coloque os votos referentes ao {candidato2.Nome}!");
             int votosCandidato2 = int.Parse(Console.ReadLine());
-            //Define os candidatos com mais votos pelo "OrderByDescending" e declara eles em variáveis, depois define a quantidade de votos pros 2 e verifica se alguém ganhou a eleição ou se vai pro desempate
 
             candidato1.Votos = votosCandidato1;
             candidato2.Votos = votosCandidato2;
@@ -265,28 +240,21 @@ namespace Classes
             else
             {
                 Console.WriteLine("Vamos para o desempate!");
-                desempate(candidato1, candidato2);
+                Desempate(candidato1, candidato2);
             }
-
         }
-        public void desempate(Candidato candidato1, Candidato candidato2)
-        {
 
-            //No desempate verifica qual é mais velho e define como vencedor
+        public void Desempate(Candidato candidato1, Candidato candidato2)
+        {
             if (candidato1.Idade > candidato2.Idade)
             {
                 Console.WriteLine($"{candidato1.Nome} ganhou a eleição!");
-
             }
             else
             {
-
                 Console.WriteLine($"{candidato2.Nome} ganhou a eleição!");
-
             }
-
         }
-
     }
 
     public class Legislativo : Eleicao
@@ -303,6 +271,7 @@ namespace Classes
         {
             this.cadeirasDisponiveis = _cadeirasDisponiveis;
         }
+
         public int getCadeirasDisponiveis()
         {
             return this.cadeirasDisponiveis;
@@ -353,6 +322,56 @@ namespace Classes
             for (int i = 0; i < partidos.Count; i++)
             {
                 partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
+            }
+        }
+    }
+
+    public class RelatorioExecutivo
+    {
+        private Executivo executivo;
+
+        public RelatorioExecutivo(Executivo _executivo)
+        {
+            executivo = _executivo;
+        }
+
+        public void GerarRelatorio()
+        {
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads", "RelatorioExecutivo.txt");
+
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                writer.WriteLine($"Relatório Executivo - Turno {executivo.GetType().GetField("turno", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(executivo)}");
+                foreach (var candidato in executivo.GetType().GetField("candidatos", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(executivo) as Candidato[])
+                {
+                    if (candidato != null)
+                    {
+                        writer.WriteLine($"Nome: {candidato.Nome}, Partido: {candidato.Partido}, Votos: {candidato.Votos}");
+                    }
+                }
+            }
+        }
+    }
+    public class RelatorioLegislativo
+    {
+        private Legislativo legislativo;
+
+        public RelatorioLegislativo(Legislativo _legislativo)
+        {
+            legislativo = _legislativo;
+        }
+
+        public void GerarRelatorio()
+        {
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads", "RelatorioLegislativo.txt");
+
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                writer.WriteLine("Relatório Legislativo");
+                foreach (var partido in legislativo.GetType().GetField("partidos", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(legislativo) as List<PartidoLegislativo>)
+                {
+                    writer.WriteLine($"Partido: {partido.getNome()}, Votos Recebidos: {partido.getVotosRecebidos()}, Cadeiras: {partido.getCadeiras()}");
+                }
             }
         }
     }
