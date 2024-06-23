@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Classes
 {
     public class Partido
     {
+        private int numero;
         private string nome;
         private int votosRecebidos;
 
@@ -36,6 +38,16 @@ namespace Classes
         public void setVotosRecebidos(int _votosRecebidos)
         {
             this.votosRecebidos = _votosRecebidos;
+        }
+
+        public void setNumero(int _numero)
+        {
+            this.numero = _numero;
+        }
+
+        public int getNumero()
+        {
+            return this.numero;
         }
     }
 
@@ -72,6 +84,11 @@ namespace Classes
     public abstract class Pessoa
     {
         public string Nome { get; set; }
+
+        public Pessoa(string _nome)
+        {
+            this.Nome = _nome;
+        }
     }
     public abstract class Conta : Pessoa
     {
@@ -127,7 +144,6 @@ namespace Classes
         {
             this.senha = _senha;
         }
-
 
 
         public Usuario(int cpf_, string senha_, string nome_)
@@ -224,6 +240,8 @@ namespace Classes
         public int Votos { get; set; }
         public int Idade { get; set; }
         public Partido Partido { get; set; }
+
+        private int numero { get; set; }
 
         public Candidato(string nome, int codigo, Partido partido, int idade, int votos)
         {
@@ -371,9 +389,9 @@ namespace Classes
                 partidos.Add(partido);
             }
 
-            public void calcularMedia(PartidoLegislativo partido)
+            public int calcularMedia(PartidoLegislativo partido)
             {
-                return partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
+                return 1; //partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
             }
 
             public void atribuirCadeirasSobrando()
@@ -416,4 +434,5 @@ namespace Classes
         }
 
     }
+
 }
