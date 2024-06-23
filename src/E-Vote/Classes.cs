@@ -14,9 +14,9 @@ namespace Classes
 
         public int Codigo;
 
-          public int getCodigo()
+        public int getCodigo()
         {
-            return this.cpf;
+            return this.Codigo;
         }
 
         public void setCodigo(int _codigo)
@@ -66,7 +66,7 @@ namespace Classes
             this.cadeiras = (int)(votosRecebidos / quocienteEleitoral);
         }
 
-        public int getCadeiras()    
+        public int getCadeiras()
         {
             return this.cadeiras;
         }
@@ -81,13 +81,13 @@ namespace Classes
             return this.quocienteEleitoral;
         }
     }
-  
-    public abstract class Conta 
-    {
-        public abstract int cpf; { get; set; }
-   
 
-         public Conta(int cpf_) 
+    public abstract class Conta
+    {
+        public int cpf;
+
+
+        public Conta(int cpf_)
         {
             cpf = cpf_;
         }
@@ -95,11 +95,11 @@ namespace Classes
 
 
 
-    public class Usuario: Conta
-    { 
+    public class Usuario : Conta
+    {
 
 
-        public int cpf;
+        public int cpf { get; set; }
 
 
         bool adm = false;
@@ -117,18 +117,18 @@ namespace Classes
 
 
 
-        public Usuario(int cpf_)
+        public Usuario(int cpf_) : base(cpf_)
         {
-            cpf = cpf_;
-           
+
+
         }
 
 
 
     }
 
-    public class Administrador:Conta
-    { 
+    public class Administrador : Conta
+    {
 
         public int cpf;
 
@@ -149,14 +149,12 @@ namespace Classes
 
 
 
-        public Administrador(int cpf_)
+        public Administrador(int cpf_) : base(cpf_)
         {
-            cpf = cpf_;
-          
 
         }
 
-      
+
 
 
     }
@@ -207,45 +205,46 @@ namespace Classes
         }
 
 
+
         public void PrimeiroTurno()
         {
-            bool empate = false;
-            int maxVotos = -1;
+            int totalVotos = 0;
+            int maior = 0;
             Candidato vencedor = null;
-
-            turno = 1;
 
             for (int i = 0; i < candidatos.Length; i++)
             {
-                if (candidatos[i].Votos > maxVotos)
+                totalVotos += candidatos[i].Votos;
+            }
+
+            int maioriaAbsoluta = totalVotos / 2 + 1;
+
+
+            for (int i = 0; i < candidatos.Length; i++)
+            {
+                if (candidatos[i].Votos >= maioriaAbsoluta)
                 {
-                    maxVotos = candidatos[i].Votos;
+                    maior++;
                     vencedor = candidatos[i];
                 }
-                else if (candidatos[i].Votos == maxVotos)
-                {
-                    empate = true;
-                }
             }
-            //Define os votos do candidato como maxVotos, se tiver outro candidato com a mesma quantidade de votos(maxVotos) define empate como true, vai pro empate e chama o segundo turno
 
-            if (empate)
+
+            if (maior >= 2)
             {
-
                 segundoturno();
             }
-            else if (vencedor != null)
+            else if (maior == 1)
             {
                 Console.WriteLine($"Vencedor do primeiro turno: {vencedor.Nome}");
             }
 
-
         }
 
-        public void RegistrarCandidato(Candidato candidato, int index) //mudar isso aq
-        {
-            candidatos[index] = candidato;
-        }
+        //Define os votos do candidato como total de votos, se tiver outro candidato com a metade +1 de votos vai pro empate e chama o segundo turno
+
+
+
 
 
         public void segundoturno()
@@ -261,7 +260,6 @@ namespace Classes
 
             turno = 2;
 
-            Console.WriteLine("A votação deu empate, iremos para o segundo turno!");
 
             Console.WriteLine($"Coloque os votos referentes ao {candidato1.Nome}!");
             int votosCandidato1 = int.Parse(Console.ReadLine());
@@ -330,50 +328,52 @@ namespace Classes
             {
                 partidos.Add(partido);
             }
-
-            public void calcularMedia(PartidoLegislativo partido)
-            {
-                return partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
-            }
-
-            public void atribuirCadeirasSobrando()
-            {
-                for (int j = 0; j < cadeirasDisponiveis; j++)
-                {
-                    int sobra = 0;
-                    int posPartido = -1;
-                    for (int i = 0; i < partidos.Count; i++)
-                    {
-                        int atual = calcularMedia(partidos[i]);
-                        if (atual > sobra)
+            /*
+                        public void calcularMedia(PartidoLegislativo partido)
                         {
-                            sobra = atual;
-                            posPartido = i;
+                            return partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
+                        }
+
+                        public void atribuirCadeirasSobrando()
+                        {
+                            for (int j = 0; j < cadeirasDisponiveis; j++)
+                            {
+                                int sobra = 0;
+                                int posPartido = -1;
+                                for (int i = 0; i < partidos.Count; i++)
+                                {
+                                    int atual = calcularMedia(partidos[i]);
+                                    if (atual > sobra)
+                                    {
+                                        sobra = atual;
+                                        posPartido = i;
+                                    }
+                                }
+                                if (posPartido != -1)
+                                {
+                                    partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
+                                }
+                            }
+                        }
+
+                        public void calcularQuocientes()
+                        {
+                            for (int i = 0; i < partidos.Count; i++)
+                            {
+                                partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
+                            }
+                        }
+
+                        public void calcularCadeiras()
+                        {
+                            for (int i = 0; i < partidos.Count; i++)
+                            {
+                                partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
+                            }
                         }
                     }
-                    if (posPartido != -1)
-                    {
-                        partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
-                    }
-                }
-            }
-
-            public void calcularQuocientes()
-            {
-                for (int i = 0; i < partidos.Count; i++)
-                {
-                    partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
-                }
-            }
-
-            public void calcularCadeiras()
-            {
-                for (int i = 0; i < partidos.Count; i++)
-                {
-                    partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
-                }
-            }
+            */
         }
-
     }
-}
+    }
+
