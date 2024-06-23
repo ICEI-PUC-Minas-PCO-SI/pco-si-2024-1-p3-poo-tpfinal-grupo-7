@@ -66,7 +66,7 @@ namespace Classes
             this.cadeiras = (int)(votosRecebidos / quocienteEleitoral);
         }
 
-        public int getCadeiras()    
+        public int getCadeiras()
         {
             return this.cadeiras;
         }
@@ -287,73 +287,73 @@ namespace Classes
 
         }
 
-        public class Legislativo : Eleicao
+    }
+
+    public class Legislativo : Eleicao
+    {
+        private List<PartidoLegislativo> partidos;
+        private int cadeirasDisponiveis;
+
+        public Legislativo()
         {
-            private List<PartidoLegislativo> partidos;
-            private int cadeirasDisponiveis;
+            partidos = new List<PartidoLegislativo>();
+        }
 
-            public Legislativo()
-            {
-                partidos = new List<PartidoLegislativo>();
-            }
+        public void setCadeirasDisponiveis(int _cadeirasDisponiveis)
+        {
+            this.cadeirasDisponiveis = _cadeirasDisponiveis;
+        }
+        public int getCadeirasDisponiveis()
+        {
+            return this.cadeirasDisponiveis;
+        }
 
-            public void setCadeirasDisponiveis(int _cadeirasDisponiveis)
-            {
-                this.cadeirasDisponiveis = _cadeirasDisponiveis;
-            }
-            public int getCadeirasDisponiveis()
-            {
-                return this.cadeirasDisponiveis;
-            }
+        public void RegistrarPartido(PartidoLegislativo partido)
+        {
+            partidos.Add(partido);
+        }
 
-            public void RegistrarPartido(PartidoLegislativo partido)
-            {
-                partidos.Add(partido);
-            }
-            public int calcularMedia(PartidoLegislativo partido)
-            {
-                return 1;//partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
-            }
+        public float calcularMedia(PartidoLegislativo partido)
+        {
+            return partido.getQuocienteEleitoral() / (partido.getCadeiras() + 1);
+        }
 
-
-            public void atribuirCadeirasSobrando()
+        public void atribuirCadeirasSobrando()
+        {
+            for (int j = 0; j < cadeirasDisponiveis; j++)
             {
-                for (int j = 0; j < cadeirasDisponiveis; j++)
-                {
-                    int sobra = 0;
-                    int posPartido = -1;
-                    for (int i = 0; i < partidos.Count; i++)
-                    {
-                        int atual = calcularMedia(partidos[i]);
-                        if (atual > sobra)
-                        {
-                            sobra = atual;
-                            posPartido = i;
-                        }
-                    }
-                    if (posPartido != -1)
-                    {
-                        partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
-                    }
-                }
-            }
-
-            public void calcularQuocientes()
-            {
+                float sobra = 0;
+                int posPartido = -1;
                 for (int i = 0; i < partidos.Count; i++)
                 {
-                    partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
+                    float atual = calcularMedia(partidos[i]);
+                    if (atual > sobra)
+                    {
+                        sobra = atual;
+                        posPartido = i;
+                    }
                 }
-            }
-
-            public void calcularCadeiras()
-            {
-                for (int i = 0; i < partidos.Count; i++)
+                if (posPartido != -1)
                 {
-                    partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
+                    partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
                 }
             }
         }
-    }
 
+        public void calcularQuocientesLegislativo()
+        {
+            for (int i = 0; i < partidos.Count; i++)
+            {
+                partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
+            }
+        }
+
+        public void calcularCadeirasLegislativo()
+        {
+            for (int i = 0; i < partidos.Count; i++)
+            {
+                partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
+            }
+        }
+    }
 }
