@@ -10,3 +10,15 @@ D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Properti
 D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.telaUser.resources
 D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.GenerateResource.cache
 D:\PUC\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.CoreCompileInputs.cache
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.AssemblyReference.cache
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Admin.resources
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Login.resources
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Properties.Resources.resources
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.telaUser.resources
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.GenerateResource.cache
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.csproj.CoreCompileInputs.cache
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\bin\Debug\E-Vote.exe.config
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\bin\Debug\E-Vote.exe
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\bin\Debug\E-Vote.pdb
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.exe
+C:\Users\Yago\Desktop\Projetos Github\E-vote\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.pdb
