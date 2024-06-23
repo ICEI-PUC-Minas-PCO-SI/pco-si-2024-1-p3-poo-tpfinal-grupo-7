@@ -85,77 +85,60 @@ namespace Classes
     public abstract class Conta
     {
         public int cpf;
+   
 
-
-        public Conta(int cpf_)
+        public Conta(int cpf_) 
         {
             cpf = cpf_;
         }
-    }
 
+        public abstract int getCpf();
 
-
-    public class Usuario : Conta
-    {
-
-
-        public int cpf { get; set; }
-
-
-        bool adm = false;
-
-        public int getCpf()
-        {
-            return this.cpf;
-        }
-
-        public void setCpf(int _cpf)
-        {
-            this.cpf = _cpf;
-        }
-
-
-
-
-        public Usuario(int cpf_) : base(cpf_)
-        {
-
-
-        }
-
-
+        public abstract void setCpf(int _cpf);
 
     }
 
-    public class Administrador : Conta
-    {
+    public class Usuario: Conta
+    { 
 
         public int cpf;
 
-
-
-        bool adm = true;
-
-
-        public int getCpf()
+        public override int getCpf()
         {
             return this.cpf;
         }
 
-        public void setCpf(int _cpf)
+        public override void setCpf(int _cpf)
         {
             this.cpf = _cpf;
         }
 
+        public Usuario(int cpf_):base(cpf_)
+        {
 
+        }
+
+    }
+
+    public class Administrador:Conta
+    { 
+
+        public int cpf;
+
+        public override int getCpf()
+        {
+            return this.cpf;
+        }
+
+        public override void setCpf(int _cpf)
+        {
+            this.cpf = _cpf;
+        }
 
         public Administrador(int cpf_) : base(cpf_)
         {
 
         }
-
-
-
 
     }
 
@@ -177,12 +160,11 @@ namespace Classes
 
     public class Candidato
     {
+        public string Partido { get; set; }
         public string Nome { get; set; }
         public int Codigo { get; set; }
         public int Votos { get; set; }
         public int Idade { get; set; }
-        public string Partido { get; set; }
-
         public Candidato(string nome, int codigo, string partido, int idade, int votos)
         {
             Nome = nome;
@@ -305,74 +287,73 @@ namespace Classes
 
         }
 
-        public class Legislativo : Eleicao
+    }
+
+    public class Legislativo : Eleicao
+    {
+        private List<PartidoLegislativo> partidos;
+        private int cadeirasDisponiveis;
+
+        public Legislativo()
         {
-            private List<PartidoLegislativo> partidos;
-            private int cadeirasDisponiveis;
+            partidos = new List<PartidoLegislativo>();
+        }
 
-            public Legislativo()
+        public void setCadeirasDisponiveis(int _cadeirasDisponiveis)
+        {
+            this.cadeirasDisponiveis = _cadeirasDisponiveis;
+        }
+        public int getCadeirasDisponiveis()
+        {
+            return this.cadeirasDisponiveis;
+        }
+
+        public void RegistrarPartido(PartidoLegislativo partido)
+        {
+            partidos.Add(partido);
+        }
+
+        public float calcularMedia(PartidoLegislativo partido)
+        {
+            return partido.getQuocienteEleitoral() / (partido.getCadeiras() + 1);
+        }
+
+        public void atribuirCadeirasSobrando()
+        {
+            for (int j = 0; j < cadeirasDisponiveis; j++)
             {
-                partidos = new List<PartidoLegislativo>();
-            }
-
-            public void setCadeirasDisponiveis(int _cadeirasDisponiveis)
-            {
-                this.cadeirasDisponiveis = _cadeirasDisponiveis;
-            }
-            public int getCadeirasDisponiveis()
-            {
-                return this.cadeirasDisponiveis;
-            }
-
-            public void RegistrarPartido(PartidoLegislativo partido)
-            {
-                partidos.Add(partido);
-            }
-            /*
-                        public void calcularMedia(PartidoLegislativo partido)
-                        {
-                            return partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
-                        }
-
-                        public void atribuirCadeirasSobrando()
-                        {
-                            for (int j = 0; j < cadeirasDisponiveis; j++)
-                            {
-                                int sobra = 0;
-                                int posPartido = -1;
-                                for (int i = 0; i < partidos.Count; i++)
-                                {
-                                    int atual = calcularMedia(partidos[i]);
-                                    if (atual > sobra)
-                                    {
-                                        sobra = atual;
-                                        posPartido = i;
-                                    }
-                                }
-                                if (posPartido != -1)
-                                {
-                                    partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
-                                }
-                            }
-                        }
-
-                        public void calcularQuocientes()
-                        {
-                            for (int i = 0; i < partidos.Count; i++)
-                            {
-                                partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
-                            }
-                        }
-
-                        public void calcularCadeiras()
-                        {
-                            for (int i = 0; i < partidos.Count; i++)
-                            {
-                                partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
-                            }
-                        }
+                float sobra = 0;
+                int posPartido = -1;
+                for (int i = 0; i < partidos.Count; i++)
+                {
+                    float atual = calcularMedia(partidos[i]);
+                    if (atual > sobra)
+                    {
+                        sobra = atual;
+                        posPartido = i;
                     }
-            */
+                }
+                if (posPartido != -1)
+                {
+                    partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
+                }
+            }
+        }
+
+        public void calcularQuocientesLegislativo()
+        {
+            for (int i = 0; i < partidos.Count; i++)
+            {
+                partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
+            }
+        }
+
+        public void calcularCadeirasLegislativo()
+        {
+            for (int i = 0; i < partidos.Count; i++)
+            {
+                partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
+            }
         }
     }
     }
