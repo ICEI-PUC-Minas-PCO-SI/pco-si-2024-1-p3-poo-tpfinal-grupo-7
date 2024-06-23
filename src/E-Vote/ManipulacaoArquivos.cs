@@ -64,7 +64,7 @@ namespace E_Vote
             for (int i = 0; i < usuariosCadastrados.Count; i++)
             {
                 int cpfCadastrado = usuariosCadastrados[i].getCpf();
-                string senhaCadastrada = usuariosCadastrados[i].getSenha();
+               // string senhaCadastrada = usuariosCadastrados[i].getSenha();
                 if (cpfCadastrado == cpfInformado)
                 {
                     permitirLogin = true;
