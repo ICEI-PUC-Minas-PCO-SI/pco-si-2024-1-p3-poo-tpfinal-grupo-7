@@ -14,9 +14,9 @@ namespace Classes
 
         public int Codigo;
 
-          public int getCodigo()
+        public int getCodigo()
         {
-            return this.cpf;
+            return this.Codigo;
         }
 
         public void setCodigo(int _codigo)
@@ -84,48 +84,39 @@ namespace Classes
   
     public abstract class Conta 
     {
-        public abstract int cpf; { get; set; }
+        public int cpf;
    
 
-         public Conta(int cpf_) 
+        public Conta(int cpf_) 
         {
             cpf = cpf_;
         }
+
+        public abstract int getCpf();
+
+        public abstract void setCpf(int _cpf);
+
     }
-
-
 
     public class Usuario: Conta
     { 
 
-
         public int cpf;
 
-
-        bool adm = false;
-
-        public int getCpf()
+        public override int getCpf()
         {
             return this.cpf;
         }
 
-        public void setCpf(int _cpf)
+        public override void setCpf(int _cpf)
         {
             this.cpf = _cpf;
         }
 
-
-
-
-        public Usuario(int cpf_)
+        public Usuario(int cpf_):base(cpf_)
         {
-            cpf = cpf_;
-           
-            nome = nome_;
-            nome = nome_;
+
         }
-
-
 
     }
 
@@ -134,32 +125,20 @@ namespace Classes
 
         public int cpf;
 
-
-
-        bool adm = true;
-
-
-        public int getCpf()
+        public override int getCpf()
         {
             return this.cpf;
         }
 
-        public void setCpf(int _cpf)
+        public override void setCpf(int _cpf)
         {
             this.cpf = _cpf;
         }
 
-
-
-        public Administrador(int cpf_)
+        public Administrador(int cpf_) : base(cpf_)
         {
-            cpf = cpf_;
-          
 
         }
-
-      
-
 
     }
 
@@ -181,13 +160,12 @@ namespace Classes
 
     public class Candidato
     {
+        public string Partido { get; set; }
         public string Nome { get; set; }
         public int Codigo { get; set; }
         public int Votos { get; set; }
         public int Idade { get; set; }
         public Candidato(string nome, int codigo, string partido, int idade, int votos)
-        public Candidato(string nome, int codigo, Partido partido, int idade, int votos)
-        public Candidato(string nome, int codigo, Partido partido, int idade, int votos)
         {
             Nome = nome;
             Codigo = codigo;
@@ -331,12 +309,12 @@ namespace Classes
             public void RegistrarPartido(PartidoLegislativo partido)
             {
                 partidos.Add(partido);
-            public void calcularMedia(PartidoLegislativo partido)
-
-                return partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
-            {
-                return 1; //partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
             }
+            public int calcularMedia(PartidoLegislativo partido)
+            {
+                return 1;//partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
+            }
+
 
             public void atribuirCadeirasSobrando()
             {
