@@ -399,7 +399,7 @@
             this.tabEleicoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabEleicoes.Name = "tabEleicoes";
             this.tabEleicoes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabEleicoes.Size = new System.Drawing.Size(546, 247);
+            this.tabEleicoes.Size = new System.Drawing.Size(686, 288);
             this.tabEleicoes.TabIndex = 0;
             this.tabEleicoes.Text = "Eleições";
             this.tabEleicoes.UseVisualStyleBackColor = true;
@@ -544,11 +544,11 @@
             this.tabPrincipal.Controls.Add(this.tabEleicoes);
             this.tabPrincipal.Controls.Add(this.tabPartidos);
             this.tabPrincipal.Controls.Add(this.tabCandidatos);
-            this.tabPrincipal.Location = new System.Drawing.Point(24, 67);
+            this.tabPrincipal.Location = new System.Drawing.Point(32, 93);
             this.tabPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.SelectedIndex = 0;
-            this.tabPrincipal.Size = new System.Drawing.Size(554, 273);
+            this.tabPrincipal.Size = new System.Drawing.Size(694, 314);
             this.tabPrincipal.TabIndex = 2;
             // 
             // Admin
@@ -556,7 +556,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(598, 369);
+            this.ClientSize = new System.Drawing.Size(865, 463);
             this.Controls.Add(this.tabPrincipal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
