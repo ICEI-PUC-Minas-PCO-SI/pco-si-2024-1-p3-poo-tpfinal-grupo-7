@@ -174,31 +174,34 @@ namespace Eleicoes
 
         public void PrimeiroTurno()
         {
-            bool empate = false;
-            int maxVotos = -1;
+            int totalVotos = 0;
+            int maior = 0;
             Candidato vencedor = null;
-
-            turno = 1;
 
             for (int i = 0; i < candidatos.Length; i++)
             {
-                if (candidatos[i].Votos > maxVotos)
+                totalVotos += candidatos[i].Votos;
+            }
+
+            int maioriaAbsoluta = totalVotos / 2 + 1;
+
+
+            for (int i = 0; i < candidatos.Length; i++)
+            {
+                if (candidatos[i].Votos >= maioriaAbsoluta)
                 {
-                    maxVotos = candidatos[i].Votos;
+                    maior++;
                     vencedor = candidatos[i];
-                    empate = false;
-                }
-                else if (candidatos[i].Votos == maxVotos)
-                {
-                    empate = true;
+                    
                 }
             }
 
-            if (empate)
+
+            if (maior >= 2)
             {
                 SegundoTurno();
             }
-            else if (vencedor != null)
+            else if (maior == 1)
             {
                 Console.WriteLine($"Vencedor do primeiro turno: {vencedor.Nome}");
             }
@@ -218,7 +221,8 @@ namespace Eleicoes
             Candidato candidato1 = topTwo[0];
             Candidato candidato2 = topTwo[1];
 
-            Console.WriteLine("A votação deu empate, iremos para o segundo turno!");
+            turno = 2;
+
 
             Console.WriteLine($"Coloque os votos referentes ao {candidato1.Nome}!");
             int votosCandidato1 = int.Parse(Console.ReadLine());
