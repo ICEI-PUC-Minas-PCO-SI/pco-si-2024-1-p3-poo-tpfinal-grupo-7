@@ -52,6 +52,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="confirmacoesDeEntrada.cs" />
     <Compile Include="Classes.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="Login.cs">

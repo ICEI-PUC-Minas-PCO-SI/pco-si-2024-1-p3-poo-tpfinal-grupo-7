@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -18,6 +19,8 @@ namespace E_Vote
         public Login()
         {
             InitializeComponent();
+
+            verificarArquivos.verificar();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -63,5 +66,6 @@ namespace E_Vote
                 this.Close();
             }));
         }
+    
     }
 }

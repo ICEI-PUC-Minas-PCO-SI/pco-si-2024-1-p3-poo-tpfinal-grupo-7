@@ -118,7 +118,7 @@ namespace E_Vote
 
                 string linha = sr.ReadLine();
 
-                while (linha != null)
+                while (linha != "" && linha != null)
                 {
                     string[] dados = linha.Split(';');
 
@@ -134,4 +134,99 @@ namespace E_Vote
         }
     }
 
+
+    public class gravadorPartidos
+    {
+        private string caminhoDoArquivo;
+
+        public gravadorPartidos()
+        {
+            this.caminhoDoArquivo = Directory.GetCurrentDirectory() + "/partidos.txt";
+        }
+
+        public void salvarPartido(List<Partido> partidos)
+        {
+
+            using (StreamWriter sw = new StreamWriter(this.caminhoDoArquivo))
+            {
+                foreach (Partido c in partidos)
+                {
+                   sw.WriteLine($"{c.getNome()};{c.getCodigo()}");
+                }
+
+            }
+
+        }
+    }
+
+    public class leitorPartidos
+    {
+        private string caminhoDoArquivo;
+
+        public leitorPartidos()
+        {
+            this.caminhoDoArquivo = Directory.GetCurrentDirectory() + "/partidos.txt";
+        }
+
+        public List<Partido> lerPartido()
+        {
+            List<Partido> partidos = new List<Partido>();
+
+            using (StreamReader sr = new StreamReader(this.caminhoDoArquivo))
+            {
+
+                string linha = sr.ReadLine();
+
+                while (linha != "" && linha != null)
+                {
+                    string[] dados = linha.Split(';');
+
+                    Partido patidoLido = new Partido(dados[0], int.Parse(dados[1]));
+                    partidos.Add(patidoLido);
+
+                    linha = sr.ReadLine();
+                }
+
+            }
+
+            return partidos;
+        }
+    }
+
+
+    public static class verificarArquivos
+    {
+        public static void verificar()
+        {
+            string caminhoDosPartidos = Directory.GetCurrentDirectory() + "/partidos.txt";
+
+            if (!File.Exists(caminhoDosPartidos))
+            {
+                using (StreamWriter writer = new StreamWriter(caminhoDosPartidos))
+                {
+                    writer.WriteLine();
+                }
+            }
+
+            string caminhoDosCandidatos = Directory.GetCurrentDirectory() + "/candidatos.txt";
+
+            if (!File.Exists(caminhoDosCandidatos))
+            {
+                using (StreamWriter writer = new StreamWriter(caminhoDosCandidatos))
+                {
+                    writer.WriteLine();
+                }
+            }
+
+            string caminhoDoUsuario= Directory.GetCurrentDirectory() + "/usuarioLogado.txt";
+
+            if (!File.Exists(caminhoDoUsuario))
+            {
+                using (StreamWriter writer = new StreamWriter(caminhoDoUsuario))
+                {
+                    writer.WriteLine();
+                }
+            }
+        }
+    }
 }

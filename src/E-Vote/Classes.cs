@@ -24,8 +24,9 @@ namespace Classes
             this.Codigo = _codigo;
         }
 
-        public Partido(string _nome)
+        public Partido(string _nome, int codigo)
         {
+            setCodigo(codigo);
             setNome(_nome);
             setVotosRecebidos(0);
         }
@@ -56,7 +57,7 @@ namespace Classes
         private int quocienteEleitoral;
         private int cadeiras;
 
-        public PartidoLegislativo(string _nome) : base(_nome)
+        public PartidoLegislativo(string _nome, int codigo) : base(_nome, codigo)
         {
 
         }

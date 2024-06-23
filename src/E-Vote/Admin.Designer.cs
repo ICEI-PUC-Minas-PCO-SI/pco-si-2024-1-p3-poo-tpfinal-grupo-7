@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabCandidatos = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControlCandidatos = new System.Windows.Forms.TabControl();
             this.tabAddCandidatos = new System.Windows.Forms.TabPage();
             this.button9 = new System.Windows.Forms.Button();
@@ -44,7 +43,6 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPartidos = new System.Windows.Forms.TabPage();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabControlPartidos = new System.Windows.Forms.TabControl();
             this.tabAddPartido = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,6 +68,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.tabCandidatos.SuspendLayout();
             this.tabControlCandidatos.SuspendLayout();
             this.tabAddCandidatos.SuspendLayout();
@@ -111,7 +111,7 @@
             // 
             // tabCandidatos
             // 
-            this.tabCandidatos.Controls.Add(this.listBox1);
+            this.tabCandidatos.Controls.Add(this.listView2);
             this.tabCandidatos.Controls.Add(this.tabControlCandidatos);
             this.tabCandidatos.Location = new System.Drawing.Point(4, 25);
             this.tabCandidatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -121,16 +121,6 @@
             this.tabCandidatos.TabIndex = 4;
             this.tabCandidatos.Text = "Candidatos";
             this.tabCandidatos.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(318, 28);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(369, 244);
-            this.listBox1.TabIndex = 9;
             // 
             // tabControlCandidatos
             // 
@@ -260,7 +250,7 @@
             // 
             // tabPartidos
             // 
-            this.tabPartidos.Controls.Add(this.listBox2);
+            this.tabPartidos.Controls.Add(this.listView1);
             this.tabPartidos.Controls.Add(this.tabControlPartidos);
             this.tabPartidos.Location = new System.Drawing.Point(4, 25);
             this.tabPartidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -270,16 +260,6 @@
             this.tabPartidos.TabIndex = 1;
             this.tabPartidos.Text = "Partidos";
             this.tabPartidos.UseVisualStyleBackColor = true;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(433, 28);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(216, 260);
-            this.listBox2.TabIndex = 17;
             // 
             // tabControlPartidos
             // 
@@ -327,6 +307,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Cadastrar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox8
             // 
@@ -563,6 +544,24 @@
             this.textBox1.Text = "Codigo do candidato:";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(347, 31);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(323, 269);
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(374, 31);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(323, 269);
+            this.listView2.TabIndex = 19;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -604,7 +603,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabCandidatos;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabControl tabControlCandidatos;
         private System.Windows.Forms.TabPage tabAddCandidatos;
         private System.Windows.Forms.Button button9;
@@ -617,7 +615,6 @@
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage tabPartidos;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.TabControl tabControlPartidos;
         private System.Windows.Forms.TabPage tabAddPartido;
         private System.Windows.Forms.Label label6;
@@ -643,5 +640,7 @@
         private System.Windows.Forms.TabControl tabPrincipal;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView2;
     }
 }

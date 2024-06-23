@@ -17,52 +17,161 @@ namespace E_Vote
         public Admin()
         {
             InitializeComponent();
-            leitorCandidatos leitor = new leitorCandidatos();
-            atualizarLista(listBox1, leitor.lerCandidatos());
+
+            configurarListViews(listView1,listView2);
+
+            leitorCandidatos leitorC = new leitorCandidatos();
+            leitorPartidos leitorP = new leitorPartidos();
+
+            atualizarListaCandidato(listView2, leitorC.lerCandidatos());
+            atualizarListaPartido(listView1, leitorP.lerPartido());
         }
 
+        //adicionar candidato
         private void button9_Click(object sender, EventArgs e)
         {
-            leitorCandidatos leitor = new leitorCandidatos();
-            List<Candidato> candidatos = leitor.lerCandidatos();
-
-            int count = 0;
-
-            Candidato novoCandidato = new Candidato(textBox18.Text, int.Parse(textBox1.Text), textBox17.Text, int.Parse(textBox16.Text), 0);
-
-            foreach (Candidato c in candidatos)
+            if (textBox1.Text != "" && textBox17.Text != "" && textBox18.Text != "" && textBox16.Text != "")
             {
-             
-                if (novoCandidato.Nome == c.Nome)
+                if (conferirDados.conferirSeNumerico(textBox1.Text) && conferirDados.conferirSeNumerico(textBox16.Text))
                 {
-                    count++;
-                    break;
-                }
-                
-            }
+                    leitorCandidatos leitor = new leitorCandidatos();
+                    List<Candidato> candidatos = leitor.lerCandidatos();
 
-            if (count == 0)
-            {
-                candidatos.Add(novoCandidato);
+                    int count = 0;
+
+                    Candidato novoCandidato = new Candidato(textBox18.Text, int.Parse(textBox1.Text), textBox17.Text, int.Parse(textBox16.Text), 0);
+
+                    foreach (Candidato c in candidatos)
+                    {
+
+                        if (novoCandidato.Nome == c.Nome)
+                        {
+                            count++;
+                            break;
+                        }
+
+                    }
+
+                    if (count == 0)
+                    {
+                        candidatos.Add(novoCandidato);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Candidato já cadastrado");
+                    }
+
+                    gravadorCandidatos gravador = new gravadorCandidatos();
+                    gravador.salvarCandidatos(candidatos);
+                    atualizarListaCandidato(listView2, candidatos);
+                }
+                else
+                {
+                    MessageBox.Show("Dado em formato incorreto inserido, confira as informações");
+                }
             }
             else
             {
-                MessageBox.Show("Candidato já cadastrado");
+                MessageBox.Show("Preencha os dados");
             }
-
-            gravadorCandidatos gravador = new gravadorCandidatos();
-            gravador.salvarCandidatos(candidatos);
-            atualizarLista(listBox1, candidatos);
 
         }
 
-        public void atualizarLista(ListBox listBox, List<Candidato> candidatos)
+        public void atualizarListaCandidato(ListView listView, List<Candidato> candidatos)
         {
-            listBox.Items.Clear(); // Limpa os itens existentes na ListBox
+            listView.Items.Clear();
             foreach (var candidato in candidatos)
             {
-                listBox.Items.Add($"Codigo: {candidato.Codigo}, Nome: {candidato.Nome}, Idade: {candidato.Idade}, Partido: {candidato.Partido}");
+                var candidatoNaLista = new ListViewItem(candidato.Codigo.ToString());
+                candidatoNaLista.SubItems.Add(candidato.Nome);
+                candidatoNaLista.SubItems.Add(candidato.Partido);
+                candidatoNaLista.SubItems.Add(candidato.Idade.ToString());
+
+                listView.Items.Add(candidatoNaLista);
             }
         }
+
+
+        //adicionar partido
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (textBox8.Text != "" && textBox7.Text != "")
+            {
+                if (conferirDados.conferirSeNumerico(textBox8.Text))
+                {
+                    leitorPartidos leitor = new leitorPartidos();
+                    List<Partido> partidos = leitor.lerPartido();
+
+                    int count = 0;
+
+                    Partido novoPartido = new Partido(textBox7.Text, int.Parse(textBox8.Text));
+
+                    foreach (Partido c in partidos)
+                    {
+
+                        if (novoPartido.getNome() == c.getNome() || novoPartido.getCodigo() == c.getCodigo())
+                        {
+                            count++;
+                            break;
+                        }
+
+                    }
+
+                    if (count == 0)
+                    {
+                        partidos.Add(novoPartido);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dado já cadastrado inserido");
+                    }
+
+                    gravadorPartidos gravador = new gravadorPartidos();
+                    gravador.salvarPartido(partidos);
+                    atualizarListaPartido(listView1, partidos);
+                }
+                else
+                {
+                    MessageBox.Show("Dado em formato incorreto inserido, confira as informações");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Preencha os dados");
+            }
+            
+        }
+    
+        public void atualizarListaPartido(ListView listViewPartidos, List<Partido> partidos)
+        {
+            listViewPartidos.Items.Clear();
+            foreach (var Partido in partidos)
+            {
+                var partidoNaLista = new ListViewItem(Partido.getCodigo().ToString());
+                partidoNaLista.SubItems.Add(Partido.getNome());
+
+                listViewPartidos.Items.Add(partidoNaLista);
+            }
+        }
+
+        public void configurarListViews(ListView listViewPartidos, ListView listViewCandidatos)
+        {
+            listViewPartidos.Clear();
+            listViewPartidos.View = View.Details;
+            listViewPartidos.FullRowSelect = true;
+            listViewPartidos.Columns.Add("Codigo", 100);
+            listViewPartidos.Columns.Add("Nome", 100);
+            
+
+            listViewCandidatos.Clear();
+            listViewCandidatos.View = View.Details;
+            listViewCandidatos.FullRowSelect = true;
+            listViewCandidatos.Columns.Add("Codigo", 62);
+            listViewCandidatos.Columns.Add("Nome", 62);
+            listViewCandidatos.Columns.Add("Partido", 62);
+            listViewCandidatos.Columns.Add("Idade", 62);
+        }
+    
     }
 }
