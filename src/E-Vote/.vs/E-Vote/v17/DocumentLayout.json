@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\",
+  "WorkspaceRootPath": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\yago\\desktop\\projetos github\\e-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\manipulacaoarquivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:manipulacaoarquivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\yago\\desktop\\projetos github\\e-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\yago\\desktop\\projetos github\\e-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\yago\\desktop\\projetos github\\e-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|d:\\puc\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\admin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:admin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|c:\\users\\yago\\desktop\\projetos github\\e-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\e-vote\\confirmacoesdeentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:confirmacoesdeentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\telauser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:telauser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6FA1CAE3-AAAC-4F85-A461-02AAEC8FB62B}|E-Vote.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -30,53 +34,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Admin.Designer.cs",
-              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.Designer.cs",
-              "RelativeDocumentMoniker": "Admin.Designer.cs",
-              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.Designer.cs",
-              "RelativeToolTip": "Admin.Designer.cs",
-              "ViewState": "AQIAAI0BAAAAAAAAAAAYwJsBAAA+AAAA",
+              "DocumentIndex": 1,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAlwBYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T17:34:53.788Z",
+              "WhenOpened": "2024-06-23T23:31:32.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
-              "RelativeDocumentMoniker": "Admin.cs",
-              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
-              "RelativeToolTip": "Admin.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAuwBEAAAAJAAAA",
+              "DocumentIndex": 4,
+              "Title": "confirmacoesDeEntrada.cs",
+              "DocumentMoniker": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\confirmacoesDeEntrada.cs",
+              "RelativeDocumentMoniker": "confirmacoesDeEntrada.cs",
+              "ToolTip": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\confirmacoesDeEntrada.cs",
+              "RelativeToolTip": "confirmacoesDeEntrada.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T17:34:46.424Z",
+              "WhenOpened": "2024-06-23T22:59:41.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "telaUser.cs [Design]",
-              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\telaUser.cs",
-              "RelativeDocumentMoniker": "telaUser.cs",
-              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\telaUser.cs [Design]",
-              "RelativeToolTip": "telaUser.cs [Design]",
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin.cs",
+              "ToolTip": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
+              "RelativeToolTip": "Admin.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAEUAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T19:11:25.482Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-23T19:07:29.784Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Admin.cs [Design]",
-              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
+              "DocumentMoniker": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs",
               "RelativeDocumentMoniker": "Admin.cs",
-              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs [Design]",
+              "ToolTip": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Admin.cs [Design]",
               "RelativeToolTip": "Admin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T17:55:59.731Z",
@@ -84,14 +89,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "ManipulacaoArquivos.cs",
+              "DocumentMoniker": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\ManipulacaoArquivos.cs",
+              "RelativeDocumentMoniker": "ManipulacaoArquivos.cs",
+              "ToolTip": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\ManipulacaoArquivos.cs",
+              "RelativeToolTip": "ManipulacaoArquivos.cs",
+              "ViewState": "AQIAAKcAAAAAAAAAAAAAALMAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T18:26:51.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
+              "DocumentMoniker": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs",
               "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "D:\\PUC\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs [Design]",
+              "ToolTip": "C:\\Users\\Yago\\Desktop\\Projetos Github\\E-vote\\pco-si-2024-1-p3-poo-tpfinal-grupo-7\\src\\E-Vote\\Login.cs [Design]",
               "RelativeToolTip": "Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T00:33:13.193Z"
+              "WhenOpened": "2024-06-17T00:33:13.193Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
