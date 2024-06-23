@@ -12,6 +12,18 @@ namespace Classes
         private string nome;
         private int votosRecebidos;
 
+        public int Codigo;
+
+          public int getCodigo()
+        {
+            return this.cpf;
+        }
+
+        public void setCodigo(int _codigo)
+        {
+            this.Codigo = _codigo;
+        }
+
         public Partido(string _nome)
         {
             setNome(_nome);
@@ -69,32 +81,26 @@ namespace Classes
             return this.quocienteEleitoral;
         }
     }
-    public abstract class Pessoa
+  
+    public abstract class Conta 
     {
-        public string Nome { get; set; }
-    }
-    public abstract class Conta : Pessoa
-    {
-        public string Senha { get; set; }
-        public bool Adm { get; set; }
+        public abstract int cpf; { get; set; }
+   
 
-         public Conta(string nome, string senha, bool adm) : base(nome)
+         public Conta(int cpf_) 
         {
-            Senha = senha;
-            Adm = adm;
+            cpf = cpf_;
         }
     }
 
 
 
-    public class Usuario
-    { // Mudar pras do pedro depois q ele commitar
+    public class Usuario: Conta
+    { 
 
-        int cpf;
 
-        string nome;
+        public int cpf;
 
-        string senha;
 
         bool adm = false;
 
@@ -108,47 +114,25 @@ namespace Classes
             this.cpf = _cpf;
         }
 
-        public string getNome()
-        {
-            return this.nome;
-        }
-
-        public void setNome(string _nome)
-        {
-            this.nome = _nome;
-        }
-
-        public string getSenha()
-        {
-            return this.senha;
-        }
-
-        public void setSenha(string _senha)
-        {
-            this.senha = _senha;
-        }
 
 
 
-        public Usuario(int cpf_, string senha_, string nome_)
+        public Usuario(int cpf_)
         {
             cpf = cpf_;
-            senha = senha_;
-            nome = nome_;
+           
         }
 
 
 
     }
 
-    public class Administrador
-    { //Mudar pras do pedro depois q ele commitar
+    public class Administrador:Conta
+    { 
 
-        int cpf;
+        public int cpf;
 
-        string nome;
 
-        string senha;
 
         bool adm = true;
 
@@ -163,40 +147,16 @@ namespace Classes
             this.cpf = _cpf;
         }
 
-        public string getNome()
-        {
-            return this.nome;
-        }
-
-        public void setNome(string _nome)
-        {
-            this.nome = _nome;
-        }
-
-        public string getSenha()
-        {
-            return this.senha;
-        }
-
-        public void setSenha(string _senha)
-        {
-            this.senha = _senha;
-        }
 
 
-        public Administrador(int cpf_, string senha_, string nome_)
+        public Administrador(int cpf_)
         {
             cpf = cpf_;
-            senha = senha_;
-            nome = nome_;
+          
 
         }
 
-        public void criarPartido()
-        {
-
-
-        }
+      
 
 
     }
@@ -217,15 +177,15 @@ namespace Classes
 
     }
 
-    public class Candidato //Mudar pras do pedro depois q ele commitar
+    public class Candidato
     {
         public string Nome { get; set; }
         public int Codigo { get; set; }
         public int Votos { get; set; }
         public int Idade { get; set; }
-        public Partido Partido { get; set; }
+        public string Partido { get; set; }
 
-        public Candidato(string nome, int codigo, Partido partido, int idade, int votos)
+        public Candidato(string nome, int codigo, string partido, int idade, int votos)
         {
             Nome = nome;
             Codigo = codigo;
