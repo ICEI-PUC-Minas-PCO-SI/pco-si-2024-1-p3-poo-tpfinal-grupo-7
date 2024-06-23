@@ -12,6 +12,18 @@ namespace Classes
         private string nome;
         private int votosRecebidos;
 
+        public int Codigo;
+
+        public int getCodigo()
+        {
+            return this.Codigo;
+        }
+
+        public void setCodigo(int _codigo)
+        {
+            this.Codigo = _codigo;
+        }
+
         public Partido(string _nome)
         {
             setNome(_nome);
@@ -54,7 +66,7 @@ namespace Classes
             this.cadeiras = (int)(votosRecebidos / quocienteEleitoral);
         }
 
-        public int getCadeiras()    
+        public int getCadeiras()
         {
             return this.cadeiras;
         }
@@ -69,135 +81,64 @@ namespace Classes
             return this.quocienteEleitoral;
         }
     }
-    public abstract class Pessoa
+  
+    public abstract class Conta 
     {
-        public string Nome { get; set; }
-    }
-    public abstract class Conta : Pessoa
-    {
-        public string Senha { get; set; }
-        public bool Adm { get; set; }
+        public int cpf;
+   
 
-         public Conta(string nome, string senha, bool adm) : base(nome)
+        public Conta(int cpf_) 
         {
-            Senha = senha;
-            Adm = adm;
+            cpf = cpf_;
         }
+
+        public abstract int getCpf();
+
+        public abstract void setCpf(int _cpf);
+
     }
 
+    public class Usuario: Conta
+    { 
 
+        public int cpf;
 
-    public class Usuario
-    { // Mudar pras do pedro depois q ele commitar
-
-        int cpf;
-
-        string nome;
-
-        string senha;
-
-        bool adm = false;
-
-        public int getCpf()
+        public override int getCpf()
         {
             return this.cpf;
         }
 
-        public void setCpf(int _cpf)
+        public override void setCpf(int _cpf)
         {
             this.cpf = _cpf;
         }
 
-        public string getNome()
+        public Usuario(int cpf_):base(cpf_)
         {
-            return this.nome;
+
         }
-
-        public void setNome(string _nome)
-        {
-            this.nome = _nome;
-        }
-
-        public string getSenha()
-        {
-            return this.senha;
-        }
-
-        public void setSenha(string _senha)
-        {
-            this.senha = _senha;
-        }
-
-
-
-        public Usuario(int cpf_, string senha_, string nome_)
-        {
-            cpf = cpf_;
-            senha = senha_;
-            nome = nome_;
-        }
-
-
 
     }
 
-    public class Administrador
-    { //Mudar pras do pedro depois q ele commitar
+    public class Administrador:Conta
+    { 
 
-        int cpf;
+        public int cpf;
 
-        string nome;
-
-        string senha;
-
-        bool adm = true;
-
-
-        public int getCpf()
+        public override int getCpf()
         {
             return this.cpf;
         }
 
-        public void setCpf(int _cpf)
+        public override void setCpf(int _cpf)
         {
             this.cpf = _cpf;
         }
 
-        public string getNome()
-        {
-            return this.nome;
-        }
-
-        public void setNome(string _nome)
-        {
-            this.nome = _nome;
-        }
-
-        public string getSenha()
-        {
-            return this.senha;
-        }
-
-        public void setSenha(string _senha)
-        {
-            this.senha = _senha;
-        }
-
-
-        public Administrador(int cpf_, string senha_, string nome_)
-        {
-            cpf = cpf_;
-            senha = senha_;
-            nome = nome_;
-
-        }
-
-        public void criarPartido()
+        public Administrador(int cpf_) : base(cpf_)
         {
 
-
         }
-
 
     }
 
@@ -217,15 +158,14 @@ namespace Classes
 
     }
 
-    public class Candidato //Mudar pras do pedro depois q ele commitar
+    public class Candidato
     {
+        public string Partido { get; set; }
         public string Nome { get; set; }
         public int Codigo { get; set; }
         public int Votos { get; set; }
         public int Idade { get; set; }
-        public Partido Partido { get; set; }
-
-        public Candidato(string nome, int codigo, Partido partido, int idade, int votos)
+        public Candidato(string nome, int codigo, string partido, int idade, int votos)
         {
             Nome = nome;
             Codigo = codigo;
@@ -347,73 +287,73 @@ namespace Classes
 
         }
 
-        public class Legislativo : Eleicao
+    }
+
+    public class Legislativo : Eleicao
+    {
+        private List<PartidoLegislativo> partidos;
+        private int cadeirasDisponiveis;
+
+        public Legislativo()
         {
-            private List<PartidoLegislativo> partidos;
-            private int cadeirasDisponiveis;
+            partidos = new List<PartidoLegislativo>();
+        }
 
-            public Legislativo()
-            {
-                partidos = new List<PartidoLegislativo>();
-            }
+        public void setCadeirasDisponiveis(int _cadeirasDisponiveis)
+        {
+            this.cadeirasDisponiveis = _cadeirasDisponiveis;
+        }
+        public int getCadeirasDisponiveis()
+        {
+            return this.cadeirasDisponiveis;
+        }
 
-            public void setCadeirasDisponiveis(int _cadeirasDisponiveis)
-            {
-                this.cadeirasDisponiveis = _cadeirasDisponiveis;
-            }
-            public int getCadeirasDisponiveis()
-            {
-                return this.cadeirasDisponiveis;
-            }
+        public void RegistrarPartido(PartidoLegislativo partido)
+        {
+            partidos.Add(partido);
+        }
 
-            public void RegistrarPartido(PartidoLegislativo partido)
-            {
-                partidos.Add(partido);
-            }
+        public float calcularMedia(PartidoLegislativo partido)
+        {
+            return partido.getQuocienteEleitoral() / (partido.getCadeiras() + 1);
+        }
 
-            public void calcularMedia(PartidoLegislativo partido)
+        public void atribuirCadeirasSobrando()
+        {
+            for (int j = 0; j < cadeirasDisponiveis; j++)
             {
-                return partido.getQuocienteEleitoral / (partido.getCadeiras + 1);
-            }
-
-            public void atribuirCadeirasSobrando()
-            {
-                for (int j = 0; j < cadeirasDisponiveis; j++)
-                {
-                    int sobra = 0;
-                    int posPartido = -1;
-                    for (int i = 0; i < partidos.Count; i++)
-                    {
-                        int atual = calcularMedia(partidos[i]);
-                        if (atual > sobra)
-                        {
-                            sobra = atual;
-                            posPartido = i;
-                        }
-                    }
-                    if (posPartido != -1)
-                    {
-                        partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
-                    }
-                }
-            }
-
-            public void calcularQuocientes()
-            {
+                float sobra = 0;
+                int posPartido = -1;
                 for (int i = 0; i < partidos.Count; i++)
                 {
-                    partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
+                    float atual = calcularMedia(partidos[i]);
+                    if (atual > sobra)
+                    {
+                        sobra = atual;
+                        posPartido = i;
+                    }
                 }
-            }
-
-            public void calcularCadeiras()
-            {
-                for (int i = 0; i < partidos.Count; i++)
+                if (posPartido != -1)
                 {
-                    partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
+                    partidos[posPartido].setVotosRecebidos(partidos[posPartido].getVotosRecebidos() + 1);
                 }
             }
         }
 
+        public void calcularQuocientesLegislativo()
+        {
+            for (int i = 0; i < partidos.Count; i++)
+            {
+                partidos[i].calcularQuociente(getTotalDeVotos(), cadeirasDisponiveis);
+            }
+        }
+
+        public void calcularCadeirasLegislativo()
+        {
+            for (int i = 0; i < partidos.Count; i++)
+            {
+                partidos[i].calcularCadeiras(partidos[i].getVotosRecebidos(), partidos[i].getQuocienteEleitoral());
+            }
+        }
     }
 }
