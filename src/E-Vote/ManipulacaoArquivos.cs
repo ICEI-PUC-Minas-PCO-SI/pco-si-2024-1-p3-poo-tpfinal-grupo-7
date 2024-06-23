@@ -64,7 +64,6 @@ namespace E_Vote
             for (int i = 0; i < usuariosCadastrados.Count; i++)
             {
                 int cpfCadastrado = usuariosCadastrados[i].getCpf();
-                string senhaCadastrada = usuariosCadastrados[i].getSenha();
                 if (cpfCadastrado == cpfInformado)
                 {
                     permitirLogin = true;
@@ -72,6 +71,66 @@ namespace E_Vote
                 }
             }
             return permitirLogin;
+        }
+    }
+
+
+
+    public class gravadorCandidatos
+    {
+        private string caminhoDoArquivo;
+
+        public gravadorCandidatos()
+        {
+            this.caminhoDoArquivo = Directory.GetCurrentDirectory() + "/candidatos.txt";
+        }
+
+        public void salvarCandidatos(List<Candidato> candidatos)
+        {
+
+            using (StreamWriter sw = new StreamWriter(this.caminhoDoArquivo))
+            {
+                foreach(Candidato c in candidatos) 
+                { 
+                    sw.WriteLine($"{c.Nome};{c.Codigo};{c.Partido};{c.Idade};{c.Votos}");
+                }
+
+            }
+
+        }
+    }
+
+    public class leitorCandidatos
+    {
+        private string caminhoDoArquivo;
+
+        public leitorCandidatos()
+        {
+            this.caminhoDoArquivo = Directory.GetCurrentDirectory() + "/candidatos.txt";
+        }
+
+        public List<Candidato> lerCandidatos()
+        {
+            List<Candidato> candidatos = new List<Candidato>();
+
+            using (StreamReader sr = new StreamReader(this.caminhoDoArquivo))
+            {
+
+                string linha = sr.ReadLine();
+
+                while (linha != null)
+                {
+                    string[] dados = linha.Split(';');
+
+                    Candidato candidatoLido = new Candidato(dados[0], int.Parse(dados[1]), dados[2], int.Parse(dados[3]), int.Parse(dados[4]));
+                    candidatos.Add(candidatoLido);
+
+                    linha = sr.ReadLine();
+                }
+
+            }
+
+            return candidatos;
         }
     }
 
