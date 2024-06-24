@@ -22,3 +22,4 @@ C:\Users\danie\Desktop\trabalho POO\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-V
 C:\Users\danie\Desktop\trabalho POO\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\bin\Debug\E-Vote.pdb
 C:\Users\danie\Desktop\trabalho POO\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.exe
 C:\Users\danie\Desktop\trabalho POO\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E-Vote.pdb
+C:\Users\danie\Desktop\trabalho POO\pco-si-2024-1-p3-poo-tpfinal-grupo-7\src\E-Vote\obj\Debug\E_Vote.Eleicao.resources
