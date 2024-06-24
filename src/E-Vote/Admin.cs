@@ -1,4 +1,4 @@
-﻿using Classes;
+﻿using Eleicoes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Classes;
 using static System.Windows.Forms.LinkLabel;
 
 namespace E_Vote
@@ -19,28 +18,29 @@ namespace E_Vote
         {
             InitializeComponent();
 
-            configurarListViews(listView1,listView2);
+            configurarListViews(listView3,listView2);
 
             leitorCandidatos leitorC = new leitorCandidatos();
             leitorPartidos leitorP = new leitorPartidos();
 
-            atualizarListaCandidato(listView2, leitorC.lerCandidatos());
-            atualizarListaPartido(listView1, leitorP.lerPartido());
+           atualizarListaCandidato(listView2, leitorC.lerCandidatos());
+            atualizarListaPartido(listView3, leitorP.lerPartido());
         }
 
         //adicionar candidato
+   
         private void button9_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox17.Text != "" && textBox18.Text != "" && textBox16.Text != "")
+            if (textBox6.Text != "" && textBox17.Text != "" && textBox18.Text != "" && textBox16.Text != "")
             {
-                if (conferirDados.conferirSeNumerico(textBox1.Text) && conferirDados.conferirSeNumerico(textBox16.Text))
+                if (conferirDados.conferirSeNumerico(textBox6.Text) && conferirDados.conferirSeNumerico(textBox16.Text))
                 {
                     leitorCandidatos leitor = new leitorCandidatos();
                     List<Candidato> candidatos = leitor.lerCandidatos();
 
                     int count = 0;
 
-                    Candidato novoCandidato = new Candidato(textBox18.Text, int.Parse(textBox1.Text), textBox17.Text, int.Parse(textBox16.Text), 0);
+                    Candidato novoCandidato = new Candidato(textBox18.Text, int.Parse(textBox6.Text), textBox17.Text, int.Parse(textBox16.Text), 0);
 
                     foreach (Candidato c in candidatos)
                     {
@@ -77,7 +77,7 @@ namespace E_Vote
             }
 
         }
-
+       
         public void atualizarListaCandidato(ListView listView, List<Candidato> candidatos)
         {
             listView.Items.Clear();
@@ -92,8 +92,9 @@ namespace E_Vote
             }
         }
 
-
+      
         //adicionar partido
+       
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -130,7 +131,7 @@ namespace E_Vote
 
                     gravadorPartidos gravador = new gravadorPartidos();
                     gravador.salvarPartido(partidos);
-                    atualizarListaPartido(listView1, partidos);
+                    atualizarListaPartido(listView3, partidos);
                 }
                 else
                 {
@@ -143,7 +144,6 @@ namespace E_Vote
             }
             
         }
-    
         public void atualizarListaPartido(ListView listViewPartidos, List<Partido> partidos)
         {
             listViewPartidos.Items.Clear();
@@ -173,6 +173,6 @@ namespace E_Vote
             listViewCandidatos.Columns.Add("Partido", 62);
             listViewCandidatos.Columns.Add("Idade", 62);
         }
-    
+
     }
 }
