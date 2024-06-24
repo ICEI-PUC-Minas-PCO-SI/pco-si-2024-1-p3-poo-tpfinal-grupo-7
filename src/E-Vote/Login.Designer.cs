@@ -32,6 +32,7 @@
             this.e_vote = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.cpf = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -42,7 +43,7 @@
             this.label1.Location = new System.Drawing.Point(469, 174);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 51);
+            this.label1.Size = new System.Drawing.Size(168, 49);
             this.label1.TabIndex = 9;
             this.label1.Text = "E-VOTE";
             // 
@@ -51,7 +52,7 @@
             this.e_vote.AutoSize = true;
             this.e_vote.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.e_vote.ForeColor = System.Drawing.SystemColors.Control;
-            this.e_vote.Location = new System.Drawing.Point(495, 148);
+            this.e_vote.Location = new System.Drawing.Point(486, 148);
             this.e_vote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.e_vote.Name = "e_vote";
             this.e_vote.Size = new System.Drawing.Size(130, 25);
@@ -63,7 +64,7 @@
             this.buttonLogin.BackColor = System.Drawing.Color.LightGreen;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.Location = new System.Drawing.Point(500, 409);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(100, 37);
             this.buttonLogin.TabIndex = 7;
@@ -77,13 +78,22 @@
             this.cpf.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cpf.Location = new System.Drawing.Point(455, 316);
-            this.cpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cpf.Margin = new System.Windows.Forms.Padding(4);
             this.cpf.MaxLength = 11;
             this.cpf.Name = "cpf";
             this.cpf.Size = new System.Drawing.Size(185, 30);
             this.cpf.TabIndex = 6;
-            this.cpf.Text = "Digite seu CPF:";
             this.cpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(452, 296);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Digite seu CPF:";
             // 
             // Login
             // 
@@ -91,11 +101,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1137, 753);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.e_vote);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.cpf);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "E-Vote: Login";
             this.ResumeLayout(false);
@@ -109,5 +120,6 @@
         private System.Windows.Forms.Label e_vote;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.TextBox cpf;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Eleicoes;
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,66 +29,64 @@ namespace E_Vote
             gravadorUsuario gravador = new gravadorUsuario();
             gravador.salvarUsuario(cpf.Text);
 
-            abrirTelaAdmin();
+            redirecionar();
         }
 
-        public void abrirTelaAdmin()
+        public void redirecionar()
         {
-            if (cpf.Text == "0")
+            if(cpf.Text != "")
             {
-                Admin novoFormulario = new Admin();
-
-                // Exibe o novo formulário de forma assíncrona usando uma nova thread
-                Thread thread = new Thread(() =>
+                if (conferirDados.conferirSeNumerico(cpf.Text) && cpf.Text.Length == 11)
                 {
-                    Application.Run(novoFormulario);
-                });
-                thread.Start();
+                    if (cpf.Text == "00000000000")
+                    {
+                        Admin novoFormulario = new Admin();
 
-                // Fecha o formulário atual de forma assíncrona
-                this.BeginInvoke(new Action(() =>
+                        // Exibe o novo formulário de forma assíncrona usando uma nova thread
+                        Thread thread = new Thread(() =>
+                        {
+                            Application.Run(novoFormulario);
+                        });
+                        thread.Start();
+
+                        // Fecha o formulário atual de forma assíncrona
+                        this.BeginInvoke(new Action(() =>
+                        {
+                            this.Close();
+                        }));
+
+                    }
+                    else
+                    {
+                       Eleicao novoFormulario = new Eleicao(cpf.Text);
+
+                        // Exibe o novo formulário de forma assíncrona usando uma nova thread
+                        Thread thread = new Thread(() =>
+                        {
+                            Application.Run(novoFormulario);
+                        });
+                        thread.Start();
+
+                        // Fecha o formulário atual de forma assíncrona
+                        this.BeginInvoke(new Action(() =>
+                        {
+                            this.Close();
+                        }));
+                    }
+                }
+                else
                 {
-                    this.Close();
-                }));
-
+                    MessageBox.Show("CPF invalido");
+                }
             }
-            else
+            else 
             {
-                telaUser novoFormulario = new telaUser();
-
-                // Exibe o novo formulário de forma assíncrona usando uma nova thread
-                Thread thread = new Thread(() =>
-                {
-                    Application.Run(novoFormulario);
-                });
-                thread.Start();
-
-                // Fecha o formulário atual de forma assíncrona
-                this.BeginInvoke(new Action(() =>
-                {
-                    this.Close();
-                }));
+                MessageBox.Show("Preencha o CPF");
             }
+
+
         }
 
-      
-        public void abrirTelaLista()//alterar com os dados da tela com a lista de votações
-        {
-            Admin novoFormulario = new Admin();
-
-            // Exibe o novo formulário de forma assíncrona usando uma nova thread
-            Thread thread = new Thread(() =>
-            {
-                //Application.Run(novoFormulario);
-            });
-            thread.Start();
-
-            // Fecha o formulário atual de forma assíncrona
-            this.BeginInvoke(new Action(() =>
-            {
-                this.Close();
-            }));
-        }
     
     }
 }

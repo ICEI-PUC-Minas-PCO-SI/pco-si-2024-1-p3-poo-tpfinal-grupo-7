@@ -16,13 +16,16 @@ namespace E_Vote
     {
         private int votos = 0;
         public List<Candidato> candidatos;
-        public telaUser()
+        public telaUser(string mensagem)
         {
             InitializeComponent();
 
             candidatos = new List<Candidato>();
 
+            lerCandidatos(listView1);
 
+            label2.Text = mensagem;
+            label3.Text = $"(Código {mensagem})";
 
         }
 
@@ -89,7 +92,7 @@ namespace E_Vote
         private void Botao_Click(object sender, EventArgs e)
         {
             Button botao = sender as Button;
-            if (botao != null)
+            if (botao != null && textBox1.Text.Length < 5)
             {
                 textBox1.Text += botao.Text;
             }
@@ -195,6 +198,31 @@ namespace E_Vote
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
          
+        }
+    
+        public void lerCandidatos(ListView listViewCandidatos)
+        {
+            listViewCandidatos.Clear();
+            listViewCandidatos.View = View.Details;
+            listViewCandidatos.FullRowSelect = true;
+            listViewCandidatos.Columns.Add("Codigo", 62);
+            listViewCandidatos.Columns.Add("Nome", 62);
+            listViewCandidatos.Columns.Add("Partido", 62);
+            listViewCandidatos.Columns.Add("Idade", 62);
+
+            leitorCandidatos leitor = new leitorCandidatos();
+            List<Candidato> candidatos = leitor.lerCandidatos();
+
+            listViewCandidatos.Items.Clear();
+            foreach (var candidato in candidatos)
+            {
+                var candidatoNaLista = new ListViewItem(candidato.Codigo.ToString());
+                candidatoNaLista.SubItems.Add(candidato.Nome);
+                candidatoNaLista.SubItems.Add(candidato.Partido);
+                candidatoNaLista.SubItems.Add(candidato.Idade.ToString());
+
+                listViewCandidatos.Items.Add(candidatoNaLista);
+            }
         }
     }
 }

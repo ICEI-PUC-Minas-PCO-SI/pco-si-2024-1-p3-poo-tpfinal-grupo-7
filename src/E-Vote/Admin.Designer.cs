@@ -45,6 +45,7 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tabRemoveCandidatos = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabRemovePartido = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -81,8 +83,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabCandidatos.SuspendLayout();
             this.tabControlCandidatos.SuspendLayout();
             this.tabAddCandidatos.SuspendLayout();
@@ -116,7 +120,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(39, 58);
+            this.label2.Location = new System.Drawing.Point(39, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 21);
@@ -216,9 +220,11 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(37, 231);
+            this.textBox6.MaxLength = 5;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(143, 22);
             this.textBox6.TabIndex = 13;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button9
             // 
@@ -263,7 +269,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(33, 18);
+            this.label11.Location = new System.Drawing.Point(17, 18);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(231, 21);
@@ -285,6 +291,15 @@
             this.tabRemoveCandidatos.Text = "Remover Candidato";
             this.tabRemoveCandidatos.UseVisualStyleBackColor = true;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(45, 49);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(126, 16);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Nome do candidato";
+            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Red;
@@ -296,11 +311,13 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Remover";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(48, 67);
             this.textBox13.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox13.MaxLength = 5;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(138, 22);
             this.textBox13.TabIndex = 8;
@@ -319,12 +336,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 96);
+            this.textBox1.Location = new System.Drawing.Point(45, 122);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 22);
+            this.textBox1.Size = new System.Drawing.Size(141, 22);
             this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Codigo do candidato:";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPartidos
@@ -342,6 +358,9 @@
             // 
             // listView3
             // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView3.HideSelection = false;
             this.listView3.Location = new System.Drawing.Point(374, 29);
             this.listView3.Name = "listView3";
@@ -422,6 +441,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(45, 58);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.MaxLength = 5;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(129, 22);
             this.textBox8.TabIndex = 9;
@@ -451,10 +471,20 @@
             this.tabRemovePartido.Text = "Excluir Partido";
             this.tabRemovePartido.UseVisualStyleBackColor = true;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(42, 48);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(115, 16);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Codigo do partido";
+            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(40, 66);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.MaxLength = 5;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(134, 22);
             this.textBox5.TabIndex = 13;
@@ -471,6 +501,7 @@
             this.button4.TabIndex = 14;
             this.button4.Text = "Excluir";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label5
             // 
@@ -520,6 +551,7 @@
             // 
             // tabNewEleicao
             // 
+            this.tabNewEleicao.Controls.Add(this.label21);
             this.tabNewEleicao.Controls.Add(this.textBox4);
             this.tabNewEleicao.Controls.Add(this.button5);
             this.tabNewEleicao.Controls.Add(this.checkedListBox1);
@@ -535,21 +567,20 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(76, 133);
+            this.textBox4.Location = new System.Drawing.Point(40, 180);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(76, 22);
+            this.textBox4.Size = new System.Drawing.Size(109, 22);
             this.textBox4.TabIndex = 22;
-            this.textBox4.Text = "ID da eleição:";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.LimeGreen;
-            this.button5.Location = new System.Drawing.Point(89, 173);
+            this.button5.Location = new System.Drawing.Point(39, 229);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 21);
+            this.button5.Size = new System.Drawing.Size(106, 26);
             this.button5.TabIndex = 15;
             this.button5.Text = "Iniciar";
             this.button5.UseVisualStyleBackColor = false;
@@ -579,6 +610,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.button2);
@@ -595,31 +628,29 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(58, 129);
+            this.textBox3.Location = new System.Drawing.Point(27, 129);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(76, 22);
+            this.textBox3.Size = new System.Drawing.Size(124, 22);
             this.textBox3.TabIndex = 21;
-            this.textBox3.Text = "ID da eleição:";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(58, 162);
+            this.textBox2.Location = new System.Drawing.Point(31, 181);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 22);
+            this.textBox2.Size = new System.Drawing.Size(115, 22);
             this.textBox2.TabIndex = 20;
-            this.textBox2.Text = "Cadeiras:";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.Location = new System.Drawing.Point(75, 205);
+            this.button2.Location = new System.Drawing.Point(40, 230);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 15);
+            this.button2.Size = new System.Drawing.Size(106, 26);
             this.button2.TabIndex = 15;
             this.button2.Text = "Iniciar";
             this.button2.UseVisualStyleBackColor = false;
@@ -649,6 +680,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.button1);
@@ -676,10 +708,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(66, 111);
+            this.button1.Location = new System.Drawing.Point(48, 175);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 15);
+            this.button1.Size = new System.Drawing.Size(77, 27);
             this.button1.TabIndex = 14;
             this.button1.Text = "Encerrar";
             this.button1.UseVisualStyleBackColor = false;
@@ -689,30 +721,48 @@
             this.tabPrincipal.Controls.Add(this.tabEleicoes);
             this.tabPrincipal.Controls.Add(this.tabPartidos);
             this.tabPrincipal.Controls.Add(this.tabCandidatos);
-            this.tabPrincipal.Location = new System.Drawing.Point(24, 76);
+            this.tabPrincipal.Location = new System.Drawing.Point(24, 81);
             this.tabPrincipal.Margin = new System.Windows.Forms.Padding(2);
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.SelectedIndex = 0;
             this.tabPrincipal.Size = new System.Drawing.Size(724, 388);
             this.tabPrincipal.TabIndex = 2;
             // 
-            // label16
+            // label18
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(42, 48);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(115, 16);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Codigo do partido";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(42, 104);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(133, 16);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "Codigo do candidato";
             // 
-            // label17
+            // label19
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(45, 49);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(126, 16);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Nome do candidato";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(24, 111);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 16);
+            this.label19.TabIndex = 22;
+            this.label19.Text = "ID da eleição";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(27, 163);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(154, 16);
+            this.label20.TabIndex = 23;
+            this.label20.Text = "Quantidade de Cadeiras";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(37, 162);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(87, 16);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "ID da eleição";
             // 
             // Admin
             // 
@@ -725,7 +775,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
-            this.Text = "Admin";
+            this.Text = "E-Vote: Admin";
             this.tabCandidatos.ResumeLayout(false);
             this.tabControlCandidatos.ResumeLayout(false);
             this.tabAddCandidatos.ResumeLayout(false);
@@ -781,7 +831,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabEleicoes;
         private System.Windows.Forms.TabControl tabPrincipal;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabControl tabControlEleicao;
         private System.Windows.Forms.TabPage tabNewEleicao;
@@ -810,5 +859,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }

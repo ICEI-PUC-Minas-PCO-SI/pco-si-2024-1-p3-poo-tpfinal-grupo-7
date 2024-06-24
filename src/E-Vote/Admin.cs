@@ -18,17 +18,17 @@ namespace E_Vote
         {
             InitializeComponent();
 
-            configurarListViews(listView3,listView2);
+            configurarListViews(listView3, listView2);
 
             leitorCandidatos leitorC = new leitorCandidatos();
             leitorPartidos leitorP = new leitorPartidos();
 
-           atualizarListaCandidato(listView2, leitorC.lerCandidatos());
+            atualizarListaCandidato(listView2, leitorC.lerCandidatos());
             atualizarListaPartido(listView3, leitorP.lerPartido());
         }
 
         //adicionar candidato
-   
+
         private void button9_Click(object sender, EventArgs e)
         {
             if (textBox6.Text != "" && textBox17.Text != "" && textBox18.Text != "" && textBox16.Text != "")
@@ -77,7 +77,7 @@ namespace E_Vote
             }
 
         }
-       
+
         public void atualizarListaCandidato(ListView listView, List<Candidato> candidatos)
         {
             listView.Items.Clear();
@@ -92,9 +92,9 @@ namespace E_Vote
             }
         }
 
-      
+
         //adicionar partido
-       
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -142,7 +142,7 @@ namespace E_Vote
             {
                 MessageBox.Show("Preencha os dados");
             }
-            
+
         }
         public void atualizarListaPartido(ListView listViewPartidos, List<Partido> partidos)
         {
@@ -163,7 +163,7 @@ namespace E_Vote
             listViewPartidos.FullRowSelect = true;
             listViewPartidos.Columns.Add("Codigo", 100);
             listViewPartidos.Columns.Add("Nome", 100);
-            
+
 
             listViewCandidatos.Clear();
             listViewCandidatos.View = View.Details;
@@ -174,5 +174,94 @@ namespace E_Vote
             listViewCandidatos.Columns.Add("Idade", 62);
         }
 
+        //Remover Candidato
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (textBox13.Text != "")
+            {
+                leitorCandidatos leitor = new leitorCandidatos();
+                List<Candidato> candidatos = leitor.lerCandidatos();
+
+                List<Candidato> candidatosAposExclusao = new List<Candidato>();
+
+                int count = 0;
+
+                foreach (Candidato c in candidatos)
+                {
+
+                    if (textBox13.Text != c.Nome)
+                    {
+                        candidatosAposExclusao.Add(c);
+                    }
+                    else
+                    {
+                        count++;
+                    }
+
+                }
+
+                if (count > 0)
+                {
+                    gravadorCandidatos gravador = new gravadorCandidatos();
+                    gravador.salvarCandidatos(candidatosAposExclusao);
+                    atualizarListaCandidato(listView2 ,candidatosAposExclusao);
+                }
+                else
+                {
+                    MessageBox.Show("Candidato não encontrado");
+                }
+
+                
+            }
+            else
+            {
+                MessageBox.Show("Preencha o campo");
+            }
+       
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox5.Text != "")
+            {
+                leitorPartidos leitor = new leitorPartidos();
+                List<Partido> partidos = leitor.lerPartido();
+
+                List<Partido> partidosAposExclusao = new List<Partido>();
+
+                int count = 0;
+
+                foreach (Partido c in partidos)
+                {
+
+                    if (textBox5.Text != c.getCodigo().ToString())
+                    {
+                        partidosAposExclusao.Add(c);
+                    }
+                    else
+                    {
+                        count++;
+                    }
+
+                }
+
+                if (count > 0)
+                {
+                    gravadorPartidos gravador = new gravadorPartidos();
+                    gravador.salvarPartido(partidosAposExclusao);
+                    atualizarListaPartido(listView3, partidosAposExclusao);
+                }
+                else
+                {
+                    MessageBox.Show("Partido não encontrado");
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Preencha o campo");
+            }
+        }
     }
 }
