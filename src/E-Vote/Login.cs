@@ -33,25 +33,47 @@ namespace E_Vote
 
         public void abrirTelaAdmin()
         {
-            Admin novoFormulario = new Admin();
-
-            // Exibe o novo formulário de forma assíncrona usando uma nova thread
-            Thread thread = new Thread(() =>
+            if (cpf.Text == "0")
             {
-                Application.Run(novoFormulario);
-            });
-            thread.Start();
+                Admin novoFormulario = new Admin();
 
-            // Fecha o formulário atual de forma assíncrona
-            this.BeginInvoke(new Action(() =>
+                // Exibe o novo formulário de forma assíncrona usando uma nova thread
+                Thread thread = new Thread(() =>
+                {
+                    Application.Run(novoFormulario);
+                });
+                thread.Start();
+
+                // Fecha o formulário atual de forma assíncrona
+                this.BeginInvoke(new Action(() =>
+                {
+                    this.Close();
+                }));
+
+            }
+            else
             {
-                this.Close();
-            }));
+                telaUser novoFormulario = new telaUser();
+
+                // Exibe o novo formulário de forma assíncrona usando uma nova thread
+                Thread thread = new Thread(() =>
+                {
+                    Application.Run(novoFormulario);
+                });
+                thread.Start();
+
+                // Fecha o formulário atual de forma assíncrona
+                this.BeginInvoke(new Action(() =>
+                {
+                    this.Close();
+                }));
+            }
         }
 
+      
         public void abrirTelaLista()//alterar com os dados da tela com a lista de votações
         {
-            //Admin novoFormulario = new Admin();
+            Admin novoFormulario = new Admin();
 
             // Exibe o novo formulário de forma assíncrona usando uma nova thread
             Thread thread = new Thread(() =>
