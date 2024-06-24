@@ -69,24 +69,30 @@
             this.tabEleicoes = new System.Windows.Forms.TabPage();
             this.tabControlEleicao = new System.Windows.Forms.TabControl();
             this.tabNewEleicao = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.tabCandidatos.SuspendLayout();
             this.tabControlCandidatos.SuspendLayout();
             this.tabAddCandidatos.SuspendLayout();
@@ -338,6 +344,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(45, 122);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.MaxLength = 5;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(141, 22);
             this.textBox1.TabIndex = 13;
@@ -551,10 +558,13 @@
             // 
             // tabNewEleicao
             // 
+            this.tabNewEleicao.Controls.Add(this.button6);
+            this.tabNewEleicao.Controls.Add(this.label23);
+            this.tabNewEleicao.Controls.Add(this.label22);
+            this.tabNewEleicao.Controls.Add(this.textBox9);
             this.tabNewEleicao.Controls.Add(this.label21);
             this.tabNewEleicao.Controls.Add(this.textBox4);
             this.tabNewEleicao.Controls.Add(this.button5);
-            this.tabNewEleicao.Controls.Add(this.checkedListBox1);
             this.tabNewEleicao.Controls.Add(this.label8);
             this.tabNewEleicao.Location = new System.Drawing.Point(4, 25);
             this.tabNewEleicao.Margin = new System.Windows.Forms.Padding(2);
@@ -564,11 +574,62 @@
             this.tabNewEleicao.TabIndex = 0;
             this.tabNewEleicao.Text = "Executiva";
             this.tabNewEleicao.UseVisualStyleBackColor = true;
+            this.tabNewEleicao.Enter += new System.EventHandler(this.tabNewEleicao_Enter);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Ivory;
+            this.button6.Location = new System.Drawing.Point(153, 154);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(97, 25);
+            this.button6.TabIndex = 27;
+            this.button6.Text = "Adicionar";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(37, 178);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(160, 16);
+            this.label23.TabIndex = 26;
+            this.label23.Text = "Candidatos adicionados: ";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(37, 136);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(133, 16);
+            this.label22.TabIndex = 25;
+            this.label22.Text = "Codigo do candidato";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(40, 154);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox9.MaxLength = 5;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(109, 22);
+            this.textBox9.TabIndex = 24;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(37, 75);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(87, 16);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "ID da eleição";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(40, 180);
+            this.textBox4.Location = new System.Drawing.Point(40, 93);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox4.MaxLength = 5;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(109, 22);
             this.textBox4.TabIndex = 22;
@@ -584,18 +645,7 @@
             this.button5.TabIndex = 15;
             this.button5.Text = "Iniciar";
             this.button5.UseVisualStyleBackColor = false;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Candidato 1",
-            "Candidato 2"});
-            this.checkedListBox1.Location = new System.Drawing.Point(36, 50);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(149, 72);
-            this.checkedListBox1.TabIndex = 19;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label8
             // 
@@ -610,12 +660,15 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button8);
+            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.textBox10);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.checkedListBox2);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
@@ -625,11 +678,71 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Legislativa";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Ivory;
+            this.button8.Location = new System.Drawing.Point(143, 174);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(97, 25);
+            this.button8.TabIndex = 31;
+            this.button8.Text = "Adicionar";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(27, 198);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(141, 16);
+            this.label24.TabIndex = 30;
+            this.label24.Text = "Partidos adicionados: ";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(27, 156);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(115, 16);
+            this.label25.TabIndex = 29;
+            this.label25.Text = "Codigo do partido";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(30, 174);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox10.MaxLength = 5;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(109, 22);
+            this.textBox10.TabIndex = 28;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(27, 108);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(154, 16);
+            this.label20.TabIndex = 23;
+            this.label20.Text = "Quantidade de Cadeiras";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(24, 56);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 16);
+            this.label19.TabIndex = 22;
+            this.label19.Text = "ID da eleição";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(27, 129);
+            this.textBox3.Location = new System.Drawing.Point(27, 74);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3.MaxLength = 5;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(124, 22);
             this.textBox3.TabIndex = 21;
@@ -637,8 +750,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 181);
+            this.textBox2.Location = new System.Drawing.Point(31, 126);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.MaxLength = 5;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(115, 22);
             this.textBox2.TabIndex = 20;
@@ -654,18 +768,6 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Iniciar";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "Partido 1",
-            "Partido 2"});
-            this.checkedListBox2.Location = new System.Drawing.Point(24, 43);
-            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(149, 55);
-            this.checkedListBox2.TabIndex = 19;
             // 
             // label4
             // 
@@ -692,6 +794,16 @@
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = "Encerrar Eleição";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(42, 104);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(85, 16);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "Id da eleição";
             // 
             // label3
             // 
@@ -727,42 +839,6 @@
             this.tabPrincipal.SelectedIndex = 0;
             this.tabPrincipal.Size = new System.Drawing.Size(724, 388);
             this.tabPrincipal.TabIndex = 2;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(42, 104);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(133, 16);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "Codigo do candidato";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(24, 111);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(87, 16);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "ID da eleição";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(27, 163);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(154, 16);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "Quantidade de Cadeiras";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(37, 162);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(87, 16);
-            this.label21.TabIndex = 23;
-            this.label21.Text = "ID da eleição";
             // 
             // Admin
             // 
@@ -835,12 +911,10 @@
         private System.Windows.Forms.TabControl tabControlEleicao;
         private System.Windows.Forms.TabPage tabNewEleicao;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label3;
@@ -863,5 +937,13 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox10;
     }
 }

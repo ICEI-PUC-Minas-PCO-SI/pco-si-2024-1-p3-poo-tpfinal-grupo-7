@@ -176,22 +176,32 @@ namespace Eleicoes
 
     public class Executivo : Eleicao
     {
-        private Candidato[] candidatos;
+        public List<Candidato> candidatos { get; set; }
         private int turno;
+        int id = 0;
 
-        public Executivo(int numeroCandidatos)
+        public Executivo()
         {
-            candidatos = new Candidato[numeroCandidatos];
+            candidatos = new List<Candidato>();
             turno = 1;
+        }
+
+        public Executivo(int _id, int _turno, int votos)
+        {
+            candidatos = new List<Candidato>();
+            turno = _turno;
+            id = _id;
+            this.adicionarVotos(votos);
         }
 
         public void PrimeiroTurno()
         {
+
             int totalVotos = 0;
             int maior = 0;
             Candidato vencedor = null;
 
-            for (int i = 0; i < candidatos.Length; i++)
+            for (int i = 0; i < candidatos.Count; i++)
             {
                 totalVotos += candidatos[i].Votos;
             }
@@ -199,7 +209,7 @@ namespace Eleicoes
             int maioriaAbsoluta = totalVotos / 2 + 1;
 
 
-            for (int i = 0; i < candidatos.Length; i++)
+            for (int i = 0; i < candidatos.Count; i++)
             {
                 if (candidatos[i].Votos >= maioriaAbsoluta)
                 {
@@ -271,6 +281,48 @@ namespace Eleicoes
             {
                 Console.WriteLine($"{candidato2.Nome} ganhou a eleição!");
             }
+        }
+
+        public void setId(int _id) 
+        {
+            this.id = _id;
+        }
+
+        public int getId()
+        {
+            return this.id;
+        }
+
+        public void setTurnos(int _turnos)
+        {
+            this.turno = _turnos;
+        }
+
+        public int getTurnos()
+        {
+            return this.turno;
+        }
+
+        public void setCandidatos(List<Candidato> _candidatos)
+        {
+            this.candidatos = _candidatos;
+        }
+
+        public List<Candidato> getCandidatos()
+        {
+            return this.candidatos;
+        }
+
+        public List<Candidato> getCandidatosList()
+        {
+            List<Candidato> lista = new List<Candidato>();
+
+            for(int i = 0;i< this.candidatos.Count; i++)
+            {
+                Candidato novo = candidatos[i];
+                lista.Add(novo);
+            }
+            return lista;
         }
     }
 

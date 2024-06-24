@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,6 +49,24 @@ namespace E_Vote
             listViewEleicoes.FullRowSelect = true;
             listViewEleicoes.Columns.Add("Id", 100);
             listViewEleicoes.Columns.Add("Tipo", 100);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            telaUser novoFormulario = new telaUser("Partido");
+
+            // Exibe o novo formulário de forma assíncrona usando uma nova thread
+            Thread thread = new Thread(() =>
+            {
+                Application.Run(novoFormulario);
+            });
+            thread.Start();
+
+            // Fecha o formulário atual de forma assíncrona
+            this.BeginInvoke(new Action(() =>
+            {
+                this.Close();
+            }));
         }
     }
 }

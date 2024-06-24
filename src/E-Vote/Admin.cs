@@ -25,6 +25,46 @@ namespace E_Vote
 
             atualizarListaCandidato(listView2, leitorC.lerCandidatos());
             atualizarListaPartido(listView3, leitorP.lerPartido());
+            
+        }
+
+        public void teste()
+        {
+            leitorEleicaoExecutiva leitor = new leitorEleicaoExecutiva();
+            List<Executivo> eleicoes = leitor.ler();
+
+            Executivo exc = new Executivo(int.Parse(textBox4.Text), 1,0);
+
+            List<Candidato> cand = new List<Candidato>();
+
+            string codigosEntrada = codigosAdicionadosCandidatos;
+            string[] codigos = codigosEntrada.Split('/');
+
+            leitorCandidatos leitorCands = new leitorCandidatos();
+            List<Candidato> listaCandidatos = leitorCands.lerCandidatos();
+
+            for (int i = 0; i < codigos.Length - 1; i++)
+            {
+                for (int j = 0; j < listaCandidatos.Count; j++)
+                {
+                    if (listaCandidatos[j].Codigo == int.Parse(codigos[i]))
+                    {
+                        Candidato ent = new Candidato(listaCandidatos[j].Nome, listaCandidatos[j].Codigo, listaCandidatos[j].Partido, listaCandidatos[j].Idade, 0);
+                        cand.Add(ent);
+                        break;
+                    }
+                }
+            }
+
+
+            
+            exc.setCandidatos(cand);
+            eleicoes.Add(exc);
+
+            gravadorEleicaoExecutiva gv = new gravadorEleicaoExecutiva();
+            gv.gravar(eleicoes);
+
+            lerEleicaoExecutiva();
         }
 
         //adicionar candidato
@@ -172,6 +212,8 @@ namespace E_Vote
             listViewCandidatos.Columns.Add("Nome", 62);
             listViewCandidatos.Columns.Add("Partido", 62);
             listViewCandidatos.Columns.Add("Idade", 62);
+
+
         }
 
         //Remover Candidato
@@ -263,5 +305,211 @@ namespace E_Vote
                 MessageBox.Show("Preencha o campo");
             }
         }
+
+        public void salvarEleicaoExecutiva()
+        {
+
+            leitorEleicaoExecutiva leitor = new leitorEleicaoExecutiva();
+            List<Executivo> eleicoes = leitor.ler();
+
+            foreach (Executivo ele in eleicoes)
+            {
+                //MessageBox.Show(ele.getId().ToString());
+            }
+
+            
+
+            Executivo exc = new Executivo(01, 1,0);
+            exc.candidatos[0] = new Candidato("c100", 28, "p1", 0, 46);
+            exc.candidatos[1] = new Candidato("c2", 29, "p2", 0, 87);
+            eleicoes.Add(exc);
+            /*
+            Executivo exc2 = new Executivo(01, 2, 1);
+            exc2.candidatos[0] = new Candidato("c3", 30, "p3", 0, 24);
+            exc2.candidatos[1] = new Candidato("c4", 31, "p4", 0, 19);
+
+
+            List<Executivo> lista = new List<Executivo>();
+            lista.Add(exc);
+            lista.Add(exc2);
+            */
+            gravadorEleicaoExecutiva gravador = new gravadorEleicaoExecutiva();
+            gravador.gravar(eleicoes);
+        }
+
+        public void lerEleicaoExecutiva()
+        {
+            leitorEleicaoExecutiva leitor = new leitorEleicaoExecutiva();
+            List<Executivo> eleicoes = leitor.ler();
+
+            listView1.Items.Clear();
+
+
+            listView1.Clear();
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
+            listView1.Columns.Add("Id", 30);
+            listView1.Columns.Add("Votos", 40);
+            listView1.Columns.Add("Candidatos", 135);
+            listView1.Columns.Add("Turnos", 45);
+
+
+            string codigosCandidatos = "";
+
+
+            foreach (Executivo e in eleicoes)
+            {
+
+                codigosCandidatos = "";
+
+                for (int i = 0; i < e.candidatos.Count; i++)
+                {
+                   // MessageBox.Show(i.ToString());
+                    codigosCandidatos += e.candidatos[i].Codigo + "/";
+                }
+
+                var partidoNaLista = new ListViewItem(e.getId().ToString());
+                partidoNaLista.SubItems.Add(e.getTotalDeVotos().ToString());
+                partidoNaLista.SubItems.Add(codigosCandidatos);
+                partidoNaLista.SubItems.Add(e.getTurnos().ToString());
+
+                listView1.Items.Add(partidoNaLista);
+            }
+        }
+
+
+        public void lerEleicaoLegislativa()
+        {
+            /*
+            leitorEleicaoExecutiva leitor = new leitorEleicaoExecutiva();
+            List<Executivo> eleicoes = leitor.ler();
+            */
+            listView1.Items.Clear();
+
+
+            listView1.Clear();
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
+            listView1.Columns.Add("Id", 30);
+            listView1.Columns.Add("Votos", 40);
+            listView1.Columns.Add("Partidos", 120);
+            listView1.Columns.Add("Cadeiras", 60);
+
+            /*
+            string codigosPartidos = "";
+
+
+            foreach (Executivo e in eleicoes)
+            {
+
+                codigosPartidos = "";
+
+                for (int i = 1; i < e.candidatos.Length; i++)
+                {
+                    codigosPartidos += e.candidatos[i].Codigo + "/";
+                }
+
+                var partidoNaLista = new ListViewItem(e.getId().ToString());
+                partidoNaLista.SubItems.Add(e.getTotalDeVotos().ToString());
+                partidoNaLista.SubItems.Add(codigosPartidos);
+                partidoNaLista.SubItems.Add(e.getTurnos().ToString());
+
+                listView1.Items.Add(partidoNaLista);
+            }
+            */
+        }
+
+
+        public void lerTodasAsEleicoes()
+        {
+            listView1.Items.Clear();
+
+
+            listView1.Clear();
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
+            listView1.Columns.Add("Id", 60);
+            listView1.Columns.Add("Votos", 60);
+            listView1.Columns.Add("Tipo", 120);
+
+        }
+
+        private void tabPage1_Enter(object sender, EventArgs e)
+        {
+            lerEleicaoLegislativa();
+        }
+
+        private void tabNewEleicao_Enter(object sender, EventArgs e)
+        {
+            lerEleicaoExecutiva();
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            lerTodasAsEleicoes();
+        }
+
+        string codigosAdicionadosCandidatos = "";
+        string codigosAdicionadosPartidos= "";
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            codigosAdicionadosCandidatos += textBox9.Text+"/";
+            label23.Text = "Candidatos adicionados: " + codigosAdicionadosCandidatos;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            codigosAdicionadosPartidos += textBox10.Text + "/";
+            label24.Text = "Partidos adicionados: " + codigosAdicionadosPartidos;
+        }
+
+        //Adicionar eleição executiva
+        private void button5_Click(object sender, EventArgs e)
+        {
+            teste();
+            //leitorEleicaoExecutiva leitor = new leitorEleicaoExecutiva();
+            //List<Executivo> eleicoes = leitor.ler();
+
+            for(int i = 0; i < 1;i++)
+            {
+                //MessageBox.Show("eleicão: " + eleicoes[i].getId() +"/" +eleicoes[i].getTotalDeVotos()+"/"+ "executivo " + eleicoes[i].getTurnos() + "/" + eleicoes[i].getCandidatos());
+            }
+
+
+            //leitorCandidatos leitorCandidatos = new leitorCandidatos();
+            //List<Candidato> listaCandidatos = leitorCandidatos.lerCandidatos();
+
+            /*
+            string[] codigos = codigosAdicionadosCandidatos.Split('/');
+
+            for(int i = 0; i < codigos.Length-1; i++)
+            {
+                MessageBox.Show(codigos[i]);
+            }
+
+            Executivo novaEleicao = new Executivo(int.Parse(textBox4.Text),codigos.Length,1);
+
+            for(int i = 0; i < codigos.Length-1; i++)
+            {
+                for(int j = 0; j < listaCandidatos.Count;j++)
+                {
+                    if (listaCandidatos[j].Codigo == int.Parse(codigos[i]))
+                    {
+                        //novaEleicao.candidatos[i] = 
+                        new Candidato(listaCandidatos[j].Nome, listaCandidatos[j].Codigo, listaCandidatos[j].Partido, listaCandidatos[j].Idade, 0);
+                        //MessageBox.Show(novaEleicao.candidatos[i].Nome);
+                        break;
+                    }
+                }
+            }
+
+            //eleicoes.Add(novaEleicao);
+            */
+            //gravadorEleicaoExecutiva gravador = new gravadorEleicaoExecutiva();
+            //gravador.gravar(eleicoes);
+
+        }
+
     }
 }

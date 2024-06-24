@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace E_Vote
 {
@@ -90,8 +93,8 @@ namespace E_Vote
 
             using (StreamWriter sw = new StreamWriter(this.caminhoDoArquivo))
             {
-                foreach(Candidato c in candidatos) 
-                { 
+                foreach (Candidato c in candidatos)
+                {
                     sw.WriteLine($"{c.Nome};{c.Codigo};{c.Partido};{c.Idade};{c.Votos}");
                 }
 
@@ -151,7 +154,7 @@ namespace E_Vote
             {
                 foreach (Partido c in partidos)
                 {
-                   sw.WriteLine($"{c.getNome()};{c.getCodigo()}");
+                    sw.WriteLine($"{c.getNome()};{c.getCodigo()}");
                 }
 
             }
@@ -191,7 +194,7 @@ namespace E_Vote
             return partidos;
         }
     }
-}
+
 
     public class gravadorEleicoes
     {
@@ -392,8 +395,6 @@ namespace E_Vote
     }
 
 
-
-
     public static class verificarArquivos
     {
         public static void verificar()
@@ -418,7 +419,7 @@ namespace E_Vote
                 }
             }
 
-            string caminhoDoUsuario= Directory.GetCurrentDirectory() + "/usuarioLogado.txt";
+            string caminhoDoUsuario = Directory.GetCurrentDirectory() + "/usuarioLogado.txt";
 
             if (!File.Exists(caminhoDoUsuario))
             {
@@ -430,3 +431,102 @@ namespace E_Vote
         }
     }
 
+    public class gravadorEleicaoExecutiva
+    {
+        public string caminhoDoArquivo;
+
+        public gravadorEleicaoExecutiva()
+        {
+            caminhoDoArquivo = Directory.GetCurrentDirectory() + "/eleicoesExecutivas.txt";
+        }
+
+        public void gravar(List<Executivo> eleicoesExecutivas)
+        {
+
+            using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + $"/eleicoesExecutivas.txt"))
+            {
+                sw.WriteLine($"{eleicoesExecutivas.Count()}");
+                string candidatosFormatados = "";
+
+                for (int i = 0; i < eleicoesExecutivas.Count(); i++)
+                {
+
+                    for(int j = 0; j < eleicoesExecutivas[i].getCandidatosList().Count(); j++)
+                    {
+
+                    }
+
+                    foreach (Candidato p in eleicoesExecutivas[i].getCandidatosList())
+                    {
+                        candidatosFormatados += $"{p.Nome},{p.Codigo},{p.Partido},{p.Idade},{p.Votos}#";
+                    }
+
+                    sw.WriteLine($"{eleicoesExecutivas[i].getId()};{eleicoesExecutivas[i].getTotalDeVotos()};{candidatosFormatados};{eleicoesExecutivas[i].getTurnos()};");
+
+                }
+
+
+            }
+
+        }
+
+    }
+
+    public class leitorEleicaoExecutiva
+    {
+        public string caminhoDoArquivo;
+
+        public leitorEleicaoExecutiva()
+        {
+            caminhoDoArquivo = Directory.GetCurrentDirectory() + "/eleicoesExecutivas.txt";
+        }
+
+
+        public List<Executivo> ler()
+        {
+
+            using (StreamReader sr = new StreamReader(this.caminhoDoArquivo))
+            {
+                List<Executivo> eleicoes = new List<Executivo>();
+
+                int tam = int.Parse(sr.ReadLine());
+
+                Executivo eleicaoLida = new Executivo(0, 0, 0);
+
+                for (int i = 0; i < tam; i++)
+                {
+                    string linha = sr.ReadLine();
+                    //MessageBox.Show(linha);
+
+                    string[] dados = linha.Split(';');// 0 1 2 3
+                    //MessageBox.Show(dados[0] + "/" + dados[1] + "/" + dados[2] + "/" + dados[3]);
+
+                    string[] candidatos = dados[2].Split('#');// 0 1 ... n
+                    //MessageBox.Show(candidatos[0] +"/"+ candidatos[1]);
+
+                    //MessageBox.Show(dados[0] + "/" + candidatos[0]+1 + "/" + dados[3] + "/" + 0);
+                    eleicaoLida = new Executivo(int.Parse(dados[0]), int.Parse(dados[3]), 0);
+
+                    eleicaoLida.candidatos = new List<Candidato>();
+
+                    for (int k = 0; k < candidatos.Length - 1; k++)
+                    {
+
+                        string[] candidato = candidatos[k].Split(',');
+
+                        //Candidato entrada = new Candidato(candidato[0], int.Parse(candidato[1]), candidato[2], int.Parse(candidato[3]), int.Parse(candidato[4]));
+                        //eleicaoLida.candidatos.Add(entrada);
+
+                    }
+
+                    // MessageBox.Show("lido: " + eleicaoLida.getId().ToString());
+                    eleicoes.Add(eleicaoLida);
+                }
+
+                return eleicoes;
+            }
+
+        }
+
+    }
+}
