@@ -8,7 +8,7 @@
 
 `Tema: Sistema de Gerenciamento de Urnas Eletrônicas`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto E-VOTE é um sistema de gerenciamento de urnas eletrônicas destinado a modernizar e otimizar o processo de votação eletrônica. Seu principal objetivo é garantir a transparência e eficiência do processo eleitoral. O sistema inclui funcionalidades como a autenticação segura de eleitores, registro e armazenamento de votos. Além disso, o E-VOTE oferece uma interface amigável tanto para eleitores quanto para administradores eleitorais, facilitando a operação das urnas eletrônicas e o monitoramento em tempo real do processo de votação
 
 ## Integrantes
 
